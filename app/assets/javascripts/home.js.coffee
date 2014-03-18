@@ -14,7 +14,7 @@ $(document).ready ->
 
   $(".bx-slider").bxSlider
     mode: 'fade'
-#    auto: true
+    auto: true
     onSliderLoad: ->
       $('.image-layer1').addClass('animated slideInLeft')
       $('.image-layer2').addClass('animated slideInDown')
