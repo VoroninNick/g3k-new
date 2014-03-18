@@ -1,0 +1,48 @@
+#home-positions
+.white_background
+  .grey-line
+.articles-item-wrapper
+  .title_wrapper
+    .title
+      |Публікації
+  .articles-item-inner
+    .articles-item-left
+      .image
+        img src=@article.image
+    .articles-item-right
+      .content
+        h2 = @article.title
+        .article-info
+          .date-public
+            p
+              | Опубліковано:
+            p
+              span = @article.created_at.strftime("%d. %m. %Y")
+          .author-article
+            p
+              | Автор:
+            p
+              span М.Воронін
+          .clear
+        .text-content
+          p =  raw @article.content
+      .articles-item-button-up
+        .articles-item-button-up-left
+        .articles-item-button-up-center
+          a href="#home-positions"
+            img src="/assets/article_to_home.jpg"
+        .articles-item-button-up-right
+  .title_wrapper.title_wrapper-read-more
+    .title
+      |Читайте також
+  .articles-item-read-more
+    - @related_articles.each do |article|
+      .article-item.item-news
+        .image
+          a href=(articles_path+'/'+article.url)
+            img src=article.image
+        .content
+          h2
+            a href=(articles_path+'/'+article.url) = truncate  article.title, length: 70
+          span = article.created_at.strftime("%d. %m. %Y")
+          p = truncate_html article.content, length: 250, omission: '...'

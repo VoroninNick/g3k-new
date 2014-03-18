@@ -1,0 +1,114 @@
+.main_banner#wrap-for-main-banner
+  #bxslider
+    ul.slides-container.bx-slider
+      - if @banner
+        -@banner.each do |b|
+          li
+            img src=b.main_image.url(:large)
+            .image-layer1
+              img src=b.layer1_image.url
+            .container
+              /h1 =b.title
+              p = raw b.description
+            .image-layer2
+              img src=b.layer2_image.url
+.content_menu_wrapper
+  .content_menu
+    nav
+      li.dost_po_Ukraini
+        img src="assets/g3k-icon-1-1.svg"
+        .link-menu-wrapper
+          /= link_to 'Доставка<br/> по всій Україні!'.html_safe, dostavka_path
+          = link_to 'Доставка<br/> по всій Україні!'.html_safe, ''
+      li.prac_z_2009
+        img src="assets/g3k-icon-2-1.svg"
+        .link-menu-wrapper
+          /= link_to 'Працюємо з 2009 року!', pracjujemo_path
+          = link_to 'Працюємо з 2009 року!', ''
+      li.bezproble_povernennia
+        img src="assets/g3k-icon-3-1.svg"
+        .link-menu-wrapper
+          /= link_to 'Безпроблемне повернення!', smooth_return_path
+          = link_to 'Безпроблемне повернення!', ''
+      li.garantia_jakosti
+        img src="assets/g3k-icon-4-1.svg"
+        .link-menu-wrapper
+          /= link_to 'Гарантія якості!', quality_assurance_path
+          = link_to 'Гарантія якості!', ''
+      .clear
+    .clear
+.bestsellers
+  .title_wrapper
+    .title
+      | ХІТИ ПРОДАЖУ
+  .bestsellers_content_wrapper
+    .bestsellers_content
+      ul#bestseller-items
+        - @product.each do |product|
+          li.item
+            .image
+              img src=product.image
+              .price_wrapper
+                .price_text
+                  = product.price
+                  |.
+                  sup
+                    |00
+            .content_item
+              h2
+                a href=(product_path(product.product_url)) = truncate  product.name, length: 70, omission: '...'
+              p
+                = truncate product.short_description, length: 140, omission: '...'
+              .add-too-cart
+                .form-actions
+                  /span.button_hover_icon
+                  img.button_hover_icon src="/assets/g3k-button-arrow-1.png"
+                  = button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => product.id), :method => :put
+                .link-too-info
+                  a href="#"
+                    |Умови доставки та оплати
+
+.novelty
+  .title_wrapper
+    .title
+      | НОВИНКИ
+  .novelty_content#ib-container2
+    ul
+      - @product.each do |product|
+        li.item
+          .image
+            img src=product.image
+            .price_wrapper
+              .price_text
+                = product.price
+                |.
+                sup
+                  |00
+          .content_item
+            h2
+              a href=(product_path(product.product_url)) = truncate  product.name, length: 70, omission: '...'
+            p
+              = truncate product.short_description, length: 105, omission: '...'
+            .add-too-cart
+              .form-actions
+                img.button_hover_icon src="/assets/g3k-button-arrow-1.png"
+                = button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => product.id), :method => :put
+
+    .clear
+.announcements_and_articles
+  .title_wrapper
+    .title
+      | АНОНСИ ТА СТАТТІ
+  .articles_content
+    - @articles.each do |article|
+      .item-news
+        .image
+          a href=(articles_path+'/'+article.url)
+            img src=article.image
+        .content
+          h2
+            a href=(articles_path+'/'+article.url) = truncate  article.title, length: 70, omission: '...'
+          span = article.created_at.strftime("%d. %m. %Y")
+          p = truncate_html article.content, length: 230, omission: '...'
+
+.clear

@@ -1,0 +1,287 @@
+// Place all the styles related to the katalog controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.catalog-page-items .add-too-cart {
+  display: block;
+  opacity: 1;
+  top: 10px;
+}
+.catalog-page-title-wrapper {
+  padding-top: 26px;
+  position: relative;
+  z-index: 5;
+}
+.catalog-page-title-wrapper .title {
+  text-transform: uppercase;
+  width: 280px;
+  padding-left: 25%;
+}
+.catalog-content-wrapper {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+.catalog-sidebar-menu-wrapper {
+  background: #F1F1F1;
+  width: 28%;
+  min-height: 740px;
+  height: 100%;
+}
+.catalog-sidebar-menu-inner {
+  background: #F1F1F1;
+  width: 100%;
+  position: relative;
+  top: -81px;
+}
+.catalog-page-items-wrapper {
+  width: 72%;
+}
+.catalog-sidebar-menu-wrapper, .catalog-page-items-wrapper {
+  float: left;
+}
+.catalog-page-items {
+  padding: 55px;
+}
+.catalog-content-items {
+  clear: both;
+}
+.cat-item {
+  padding-top: 40px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 30%;
+  min-height: 400px;
+  float: left;
+  list-style: none;
+}
+.cat-item .image img {
+  width: 80%;
+}
+.catalog-sidebar-menu {
+  position: relative;
+  top: 80px;
+}
+.loading-group-menu .loading-group-item-title-wrapper {
+  clear: both;
+  width: 100%;
+  height: 55px;
+  background: url("../assets/g3k-h1-pattern.png");
+}
+.loading-group-menu .loading-group-item .group-menu-item-title a {
+  text-align: center;
+  display: block;
+  font-size: 1.625em;
+  font-weight: 600;
+  color: #f3691e;
+  text-transform: uppercase;
+  border-bottom: 1px dashed rgba(241, 107, 33, 0.3);
+}
+.loading-group-menu .loading-group-item .group-menu-item-title a:hover {
+  border-bottom: 1px dashed rgba(241, 107, 33, 1);
+}
+.loading-group-menu {
+  padding-top: 45px;
+}
+.group-menu-item-arrow-first, .group-menu-item-title,  .group-menu-item-arrow-second {
+  float: left;
+}
+.loading-group-menu li {
+  list-style: none;
+  clear: both;
+  padding-bottom: 20px;
+}
+.loading-group-menu a {
+  text-decoration: none;
+}
+.group-menu-item-title a {
+  padding-top: 8px;
+}
+.group-menu-item-arrow-second {
+  width: 12px;
+  padding-right: 10%;
+  padding-top: 5%;
+  float: right;
+}
+.group-menu-item-title {
+  padding-left: 2%;
+}
+.loading-group-sub-menu li a {
+  color: #666666;
+  border-bottom: 1px solid rgba(102, 102, 102, 0.3);
+}
+.loading-group-sub-menu li a:hover {
+  color: #f3691e;
+  border-bottom: 1px solid rgba(241, 107, 33, 1);
+}
+.loading-group-sub-menu {
+  padding-left: 7%;
+  padding-bottom: 12px;
+}
+.loading-group-sub-menu li, .loading-group-sub-sub-menu li {
+  padding: 6px;
+  position: relative;
+}
+.loading-group-sub-sub-menu {
+  padding-left: 4%;
+}
+.loading-group-sub-sub-menu li a {
+  border-bottom: none;
+}
+.loading-group-sub-sub-menu li .active-sub-sub-menu-arrow, .loading-group-sub-sub-menu li .active-sub-sub-menu-title {
+  float: left;
+}
+.loading-group-sub-sub-menu li .active-sub-sub-menu-arrow {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+.catalog-page-items .about_title {
+  padding-top: 0!important;
+  width: 100%;
+}
+.similar-products-content li .image img {
+  width: 100%;
+}
+.catalog-sidebar-menu-wrapper {
+  margin-bottom: -170px;
+}
+.catalog-content-items li .content_item h2 a, .similar-products-content .content h2 a {
+  color: #F16B21;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+}
+.catalog-content-items li .content_item p, .similar-products-content .content p {
+  color: #666666;
+  text-align: center;
+  font-weight: 200;
+  font-size: 12.11px;
+  padding: 0px 10px 0px 10px;
+  min-height: 80px;
+}
+.catalog-content-items li .image, .similar-products-content .image {
+  width: 163px;
+  height: 163px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border: 3px solid #F16B21;
+  display: inline-block;
+  margin: 0 auto;
+  margin-left: 15%;
+}
+.catalog-content-items li .image img, .similar-products-content .image img {
+  width: 163px;
+  height: 163px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  vertical-align: middle;
+}
+.catalog-content-items li .price_wrapper, .similar-products-content li .price_wrapper {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 36px 80px 45px;
+  border-color: transparent transparent #F16B21 transparent;
+  position: relative;
+  top: -165px;
+  left: 108px;
+  -moz-transform: rotate(230deg);
+  -ms-transform: rotate(230deg);
+  -webkit-transform: rotate(230deg);
+  -o-transform: rotate(230deg);
+  transform: rotate(230deg);
+}
+.catalog-content-items li .price_wrapper .price_text, .similar-products-content li .price_wrapper .price_text {
+  background: #F16B21;
+  color: white;
+  font-weight: 400;
+  font-size: 17px;
+  -moz-transform: rotate(129deg);
+  -ms-transform: rotate(129deg);
+  -webkit-transform: rotate(129deg);
+  -o-transform: rotate(129deg);
+  transform: rotate(129deg);
+  position: relative;
+  top: 22px;
+  left: 7px;
+}
+.similar-products-content {
+  padding-top: 60px;
+}
+.catalog-content-items .content_item {
+  min-height: 108px;
+}
+.loading-group-item {
+  transition: 0.6s ease-out all;
+  -webkit-transition: 0.6s ease-out all;
+}
+.loading-group-sub-sub-menu {display: none;}
+.loading-group-sub-menu {display: none;}
+.collapsable-hitarea {
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.buttons-vk,  .buttons-fb {
+  width: 30%;
+  float: left;
+}
+.buttons-vk {
+  padding-left: 17%;
+}
+.buttons-fb {
+  padding-left: 3%;
+}
+.like-social-buttons {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  padding-left: 5%;
+}
+.for-catalog .like-social-buttons {
+  padding-left: 339px;
+  width: 60%;
+}
+.catalog_info_about .about_title {
+  padding-bottom: 30px;
+}
+.catalog_info_list_items .about_title {
+  width: 260px;
+}
+.catalog_text_content {
+  padding: 40px 0px 135px 0px;
+}
+.catalog_info_list_content {
+  padding: 25px 0px 205px 0px;
+}
+.catalog-page-items h1 {
+  font-size: 1.625em;
+  font-weight: 700;
+  color: #f3691e;
+}
+.catalog_text_content p {
+  color: #838383;
+  font-weight: 100;
+}
+.catalog_image_content {
+  width: 100%;
+  clear: both;
+}
+.dbl {display: block!important;}
+.group-menu-button-border img {
+  padding: 8px;
+}
+#category {
+  padding-left: 20px;
+}
+.group-menu-item-title a:before {
+  border: none!important;
+}
+.catalog-page-items .form-actions {width: 90%!important;}

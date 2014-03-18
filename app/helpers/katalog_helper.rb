@@ -1,0 +1,2 @@
+module KatalogHelper
+end

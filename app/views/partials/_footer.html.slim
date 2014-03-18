@@ -1,0 +1,136 @@
+= render :partial => 'partials/soc_button'
+.clear
+.friendly_logo_wrapper
+  .friendly_logo.friendly_logo_slider
+    ul#friendly-items
+      li.flex-slide
+        img src='/assets/brand_logo.jpg'
+      li.flex-slide
+        img src='/assets/brand_logo.jpg'
+      li.flex-slide
+        img src='/assets/brand_logo.jpg'
+      li.flex-slide
+        img src='/assets/brand_logo.jpg'
+      li.flex-slide
+        img src='/assets/brand_logo.jpg'
+      li.flex-slide
+        img src='/assets/brand_logo.jpg'
+      li.flex-slide
+        img src='/assets/brand_logo.jpg'
+      li.flex-slide
+        img src='/assets/brand_logo.jpg'
+.clear
+.info_block_wrapper
+  .info_block_title_wrapper
+    .info_block_title
+  .info_block_content
+    .info_block_about_us.block
+      .info-block-content-title-wrapper
+        .info-block-title
+          img src="/assets/g3k-h1-arrow.png"
+          | Про нас
+      .info-block-content-inner
+        p Аллегория наблюдаема. Различное расположение изящно редуцирует одиннадцатисложник, что нельзя сказать о нередко манерных эпитетах. Его герой, пишет Бахтин, абстрактное высказывание синфазно. Метафора недоступно представляет собой экзистенциальный анапест, хотя в существование или актуальность этого он не верит, а моделирует собственную реальность. Филологическое суждение представляет собой диалогический зачин, где автор является полновластным хозяином своих
+    .info_block_we_are_in_social_networks.block
+      .info-block-content-title-wrapper
+        .info-block-title
+          img src="/assets/g3k-h1-arrow.png"
+          | Ми в соц. мережах
+      .info-block-content-inner
+        li
+          a href="http://vk.com/"
+            img src="/assets/g3k-social-icon-1.svg"
+        li
+          a href="http://facebook.com/"
+            img src="/assets/g3k-social-icon-2.svg"
+        li
+          a href="https://twitter.com/"
+            img src="/assets/g3k-social-icon-3.svg"
+        li
+          a href="http://youtube.com/"
+            img src="/assets/g3k-social-icon-4.svg"
+        li
+          a href="http://vk.com/"
+            img src="/assets/g3k-social-icon-5.svg"
+        li
+          a href="http://www.odnoklassniki.ru/"
+            img src="/assets/g3k-social-icon-6.svg"
+
+    .info_block_contacts.block
+      .info-block-content-title-wrapper
+        .info-block-title
+          img src="/assets/g3k-h1-arrow.png"
+          | Контакти
+      .info-block-content-inner
+        .info_block_contacts_content_top
+          h3
+            a href="tel:+380949939997"
+              span
+                |+
+              |38&nbsp;
+              span
+                = '('
+              |094
+              span
+                = ')'
+              |&nbsp;993 99 97
+          h3
+            a href="tel:+380322537997"
+              span
+                |+
+              |38&nbsp;
+              span
+                = '('
+              |032
+              span
+                = ')'
+              |&nbsp;253 79 97
+        .info_block_contacts_content_bottom
+          h5  пл. Коліївщини, 1 (4-ий поверх), м. Львів, Україна, 79000
+          p  ТзОВ СП «Трайдент Консалтінг та Інвестиції»
+          p  ЄДРПОУ: 14339080, р/р: 26008053812156
+  .gery_line
+#footer.footer_wrapper
+    .footer-box-shadow
+    .footer
+      .footer_up
+      .footer_up_left
+        .footer_up_left_text
+          p
+            | © Інтернет магазин ігор нового покоління «G3K™» . 2009 — 2014
+          p
+            | Всі права застережено.
+            = link_to ' Правила користування сайтом.', about_path
+      .footer_up_right
+        nav.footer_menu
+          li = link_to 'Про нас', about_path
+          li = link_to 'Каталог', katalog_path
+          li = link_to 'Акції', actsii_path
+          li = link_to 'Публікації', publications_path
+          li = link_to 'Контакти', contacts_path
+
+      .clear
+
+      .footer_down
+      .footer_down_left
+        .voronin_studio
+          a href="http://voroninstudio.eu/"
+            .voronin_studio_img
+              img.voronin-studio-lable src="/assets/voronin-studio-lable.svg"
+              img.hover-voronin-studio-lable src="/assets/studio-lable-white-1.png" style="display: none;"
+          .voronin_studio_text
+            p
+              |Розроблено в&nbsp;
+              a href="http://voroninstudio.eu/" студії  М. Вороніна
+              |&nbsp; в 2014 році.
+              a href="http://voroninstudio.eu/" &nbsp;Інформація про сайт.
+      .footer_down_right
+        .footer_down_right_text
+          p Незалежно від того, де ви знаходитесь на даний момент, ви зможете замовити товар, що, погодьтеся, дуже зручно.
+          p  Які ж переваги пропонує наш інтернет-магазин електроніки, телефонів та інших товарів?
+          p  Найбільш істотний факт - наявність тисяч позицій, які гарантовано є на складі.
+= render :partial => 'partials/call_order'
+= render :partial => 'partials/cart'
+
+
+

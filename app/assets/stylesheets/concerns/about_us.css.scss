@@ -1,0 +1,28 @@
+// Place all the styles related to the concerns/about_us controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.image_about_wrapper {
+  max-width: 1000px;
+  width: 75%;
+  margin: 0 auto;
+  border: 2px solid #c5c4c2;
+  height: 100%;
+}
+.image_about_wrapper img {
+  width: 100%;
+  margin-bottom: -5px;
+}
+.image_signature {
+  max-width: 1000px;
+  width: 80%;
+  margin: 0 auto;
+  background: url("/assets/g3k-h1-pattern.png");
+}
+.image_signature p {
+  font-size: 15px;
+  text-align: center;
+  font-style: italic;
+  position: relative;
+  top: 5px;
+}

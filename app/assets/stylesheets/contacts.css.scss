@@ -1,0 +1,184 @@
+// Place all the styles related to the contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#new_contact input:focus, #new_contact textarea:focus {
+  font-size: 1.4em;
+  font-weight: 400;
+}
+#new_contact .form-actions {
+  width: 31%!important;
+}
+.grey-line {
+  width: 100%;
+  height: 8px;
+  background: #e5e5e5;
+}
+.contacts-form {
+  clear: both;
+  padding-top: 25px;
+}
+.contacts-details, .contacts-maps-inner, #new_contact {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contacts-maps-inner {padding-bottom: 62px;}
+.contacts-details-address, .contacts-details-web, .contacts-details-phones {
+  float: left;
+  width: 30%;
+}
+.contacts-details .about_title {
+  width: 100%;
+}
+.contacts-detail span {
+  color: #F16B21;
+}
+.contacts-detail a {
+  color: #4D4D4D;
+  text-decoration: none;
+}
+.contacts-detail p {
+  color: #4D4D4D;
+  font-size: 21px;
+  font-weight: 200;
+}
+.contacts-page-wrapper {
+  padding-top: 25px;
+}
+#map {
+  border-bottom: 1px solid #f16b21;
+  border-top: 1px solid #f16b21;
+  width: 100%;
+  height: 430px;
+}
+.contacts-maps {
+  background: #E5E5E5;
+  clear: both;
+}
+.contacts-detail p:last-child {
+  padding-bottom: 100px;
+}
+.contacts-maps-inner .about_title {
+  width: 100%;
+  font-weight: 600;
+  padding: 25px 0px 25px 0px;
+}
+
+.form-horizontal-left, .form-horizontal-right {
+  float: left;
+}
+.form-horizontal-left {
+  padding-right: 15px;
+  width: 36%;
+}
+.form-horizontal-right {
+  padding-left: 15px;
+  width: 60%;
+}
+
+.contacts-form-inner {
+  background: #414242;
+  clear: both;
+}
+.contact_message textarea {
+  width: 97%;
+}
+.form-horizontal-left input {
+  width: 91%;
+}
+.contacts-form .call-order-form-title-wrapper {
+  height: 56px;
+}
+#new_contact label {
+  padding: 8px 0px 20px 14px;
+  color: #F16B21;
+  text-transform: uppercase;
+  display: block;
+  font-size: 0.87em;
+  font-weight: 300;
+}
+.form-actions input {
+  background: none!important;
+  border: none!important;
+  color: white!important;
+  font-style: normal!important;
+  text-transform: uppercase;
+}
+#new_contact {
+  padding-top: 53px;
+  padding-bottom: 77px;
+}
+#new_contact input,  #new_contact textarea {
+  font-size: 1.3em;
+  padding: 16px;
+  color: #B2B2B2;
+  font-style: italic;
+  font-weight: 300;
+}
+.btn.btn.btn-primary {
+  font-weight: 600;
+}
+.contacts-details-web p span {
+  padding-left: 24px;
+}
+.form-actions img,  .form-actions input {
+  float: left;
+}
+.form-actions {
+  position: relative;
+  width: 50%;
+  float: right;
+  clear: both;
+  background: url("../assets/g3k-bg-pattern-orange-1.gif") !important;
+  overflow: hidden;
+}
+.contacts-form .form-actions {float: right;}
+.form-actions input {
+  width: 70%;
+  padding: 9px 0px 9px 0px!important;
+}
+.form-actions img {
+  padding-left: 10px;
+}
+.contacts-detail .about_title {
+  padding: 60px 0 40px 0;
+}
+.contacts-detail {
+  padding-left: 3%;
+}
+.contacts-page-inner .title {
+  width: 200px;
+}
+.contacts-details-phones p a {
+  font-size: 27px;
+  font-weight: 400;
+}
+.contacts-form h1 {
+  display: block;
+  float: left;
+  padding-right: 50px!important;
+}
+.contact-form-title h1 {
+  font-size: 1.475em;
+  font-weight: 600;
+  padding: 14px 0 0 0;
+  text-align: center;
+  color: #f16b21;
+  text-transform: uppercase;
+}
+//#new_contact .form-actions {display: none;}
+.input.text.optional.contact_message {
+  width: 97%;
+}
+.contact-form-title {
+  max-width: 1200px;
+  width: 50%;
+  margin: 0 auto;
+}
+.form-horizontal-right textarea {
+  min-height: 260px;
+}
+#cboxContent {
+  height: 100%!important;
+}

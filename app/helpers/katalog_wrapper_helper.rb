@@ -1,0 +1,2 @@
+module KatalogWrapperHelper
+end

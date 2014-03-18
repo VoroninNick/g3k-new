@@ -1,0 +1,90 @@
+// Place all the styles related to the article controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.articles-item-wrapper {
+  padding-top: 26px;
+}
+.articles-item-inner {
+  padding-top: 46px;
+}
+.articles-item-wrapper .title {
+  width: 200px;
+}
+.articles-item-left, .articles-item-right {
+  float: left;
+}
+.articles-item-right {
+  width: 68%;
+}
+.articles-item-left {
+  width: 32%;
+}
+.articles-item-left .image img {
+  width: 100%;
+  border: 2px solid #989898;
+}
+.articles-item-right .content {
+  padding-left: 4%;
+}
+.articles-item-right .content h2 {
+  color: #f3691e;
+  font-size: 1.700em;
+  font-weight: 600;
+  padding-bottom: 0.5em;
+  line-height: 1.3em;
+}
+.articles-item-right .date-public span, .articles-item-right .author-article span {
+  float: left;
+}
+.articles-item-right .text-content {
+  clear: both;
+}
+.articles-item-right .article-info span {
+  padding-bottom: 20px;
+}
+.articles-item-right .date-public  span:first-child, .articles-item-right .author-article  span:first-child {
+  font-weight: 200;
+}
+.articles-item-right .date-public span:last-child, .articles-item-right .author-article span:last-child {
+  font-weight: 500;
+}
+.articles-item-button-up {
+  width: 96%;
+  clear: both;
+  height: 18px;
+  padding-bottom: 80px;
+  padding-top: 105px;
+  padding-left: 4%;
+}
+.articles-item-button-up-center img {
+  position: relative;
+  top: 11px;
+}
+.text-content p {
+  color: #8b8b8b;
+  font-weight: 200;
+}
+.article-info p {
+  color: #8b8b8b;
+  font-weight: 100;
+  font-size: 14px;
+}
+.article-info p span {
+  font-weight: 700;
+  color: #676767;
+}
+.articles-item-button-up-center {
+  height: 20px;
+  padding: 0 10px 0 10px;
+  margin: 0 auto;
+}
+.articles-item-button-up-left, .articles-item-button-up-center, .articles-item-button-up-right {float: left}
+.articles-item-button-up-left, .articles-item-button-up-right {
+  width: 47%;
+  border-bottom: 1px dotted #989898;
+  height: 20px;
+}
+.title_wrapper-read-more .title {
+  width: 230px;
+}

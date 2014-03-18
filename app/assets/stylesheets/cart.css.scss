@@ -1,0 +1,228 @@
+// Place all the styles related to the cart controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.cart-title-wrapper {
+  height: 56px;
+  background: url("../assets/g3k-bg-pattern-black-1.gif");
+}
+.cart-title {
+  max-width: 1200px;
+  width: 50%;
+  margin: 0 auto;
+}
+.cart-title img, .cart-title h1 {
+  float: left;
+}
+.cart-title h1 {
+  font-size: 1.475em;
+  font-weight: 600;
+  padding: 10px 30px 0 30px;
+  text-transform: uppercase;
+  color: #f16b21;
+}
+.about-item {
+  //max-width: 1400px;
+  //width: 78%;
+  //margin: 0 auto;
+  background: #414242;
+}
+.padding-page-top {
+  width: 100%;
+  height: 28px;
+}
+.cart-table-title {
+  background: #4d4d4d;
+}
+.cart-coll-count .table-title {
+  border-left: 1px solid #414242;
+  border-right: 1px solid #414242;
+}
+.table-title {
+  color: #cbcbcb;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 21px;
+}
+.table-title img {
+  width: 16px;
+  padding: 0 10px 0 8px;
+}
+.cart-coll-name, .cart-coll-count, .cart-coll-price, .table-item-coll-content, .table-item-coll-count, .table-item-coll-price {float: left;}
+.cart-coll-name, .table-item-coll-content {
+  width: 51%;
+  padding-left: 3%;
+}
+.cart-coll-count, .table-item-coll-count {
+  width: 22%;
+}
+.cart-coll-price, .table-item-coll-price {
+  width: 23%;
+}
+.cart-table-title .table-title {
+  padding: 16px 0 16px 0;
+}
+.table-title span {
+  font-size: 50%;
+  vertical-align: super;
+}
+.image-item img {
+  width: 82px;
+  height: 82px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  vertical-align: middle;
+}
+.image-item {
+  width: 82px;
+  height: 82px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border: 3px solid #F16B21;
+  margin: 15px;
+}
+.button-delete-item img {
+  width: 14px;
+  cursor: pointer;
+}
+.button-checkbox-inner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #808080;
+}
+.table-item-coll-count span, .table-item-coll-price span, .about-item-title h1 {
+  color: #f16b21;
+}
+.button-delete-item, .button-checkbox, .image-item, .about-item {float: left;}
+.button-delete-item {
+  width: 14px;
+}
+.button-checkbox {
+  width: 16px;
+  padding: 50px 14px 0 0;
+}
+.about-item {
+  width: 54%;
+  padding: 14px;
+}
+.cart-result-inner {
+  width: 46%;
+  float: right;
+  padding-bottom: 50px;
+}
+.cart-result-title, .cart-result-show {
+  float: left;
+  width: 50%;
+}
+.cart-checkout-buttons-prev, .cart-checkout-middle,  .cart-checkout-buttons-next {
+  float: left;
+}
+.cart-checkout-buttons-prev, .cart-checkout-buttons-next {
+  width: 46%;
+}
+.cart-list-products input {
+  background: none;
+  border: none;
+  font-style: normal;
+  font-size: 21px;
+  text-transform: uppercase;
+  color: white;
+}
+.cart-list-products input, .cart-list-products img {
+  float: left;
+}
+.cart-list-products input {
+  width: 50%;
+}
+.cart-checkout-buttons-next .form-actions {
+  float: right;
+  width: 100%;
+}
+.cart-list-products input {
+  padding: 10px 0 0 0!important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  transition: 0.6s ease-out all;
+  -webkit-transition: 0.6s ease-out all;
+}
+.cart-list-products input:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+.cart-list-products {
+  width: 82%;
+  padding-left: 8%;
+}
+.cart-checkout-buttons-prev img {
+  margin-left: 4%;
+}
+.cart-checkout-buttons-next {
+  float: right;
+  margin-right: 3%;
+  width: 30%;
+}
+.table-item {
+  border-bottom: 1px dotted #808080;
+  margin: 0 30px 0 30px;
+}
+.cart-result {
+  margin: 0 30px 0 30px;
+}
+.cart-content-wrapper .footer_down {
+  margin: 30px 30px 0 30px;
+}
+.cart-content-wrapper {
+  padding-bottom: 30px;
+}
+.button-delete-item {
+  padding: 48px 11px 0 10px;
+}
+.table-item-coll-count span {
+  display: block;
+  padding: 9px 0 0 35px;
+}
+.table-item-coll-price p span {
+  display: block;
+  float: left;
+}
+.table-item-coll-price p {
+   padding: 17px 0 0 35px;
+ }
+
+.cart-checkout-status {
+  min-height: 80px;
+}
+.table-item-coll-count {
+  border-left: 1px dotted #808080;
+  border-right: 1px dotted #808080;
+  margin-top: 9px;
+  min-height: 90px;
+}
+.about-item-title h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 21px;
+  padding-bottom: 7px;
+}
+.about-item-text p {
+  color: #808080;
+  font-size: 12px;
+  font-weight: 100;
+}
+.cart-result-show span {
+  color: #F16B21;
+  font-size: 39px;
+  font-weight: 600;
+}
+.cart-result {
+  padding-top: 40px;
+}
+.close-cart-wrapper span {
+  text-transform: uppercase;
+  float: right;
+  font-size: 14px;
+  color: #F16B21;
+}
+

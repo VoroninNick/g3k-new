@@ -1,0 +1,184 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item-size-number {
+  width: 47%!important;
+  padding-left: 25px;
+}
+.item-size-number h4 {
+  font-size: 20px;
+}
+.desoSlide-wrapper {
+  position: absolute;
+}
+.similar-products-content li {
+  width: 30%;
+  float: left;
+  list-style: none;
+  min-height: 420px;
+  padding-right: 3%;
+}
+
+.item-top-left-part, .item-top-right-part {
+  width: 50%;
+  float: left;
+  min-height: 50px;
+}
+.item-top-left-part img {
+  width: 100%;
+}
+.item-top-right-part .about_title {
+  width: 100%!important;
+  padding-bottom: 40px;
+}
+.item-top-right-part .add-too-cart {
+  display: block!important;
+  opacity: 1!important;
+  position: static!important;
+  padding-left: 25px;
+}
+.item-top-right-part .add-too-cart .form-actions {
+  width: 65% !important;
+}
+.item-top-left-part .image {
+  margin-left: 18%;
+  width: 228px;
+  height: 228px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border: 3px solid #F16B21;
+}
+.item-top-left-part .image img {
+  width: 228px;
+  height: 228px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  vertical-align: middle;
+}
+.item-top-left-part .price_wrapper {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 44px 102px 56px;
+  border-color: transparent transparent #F16B21 transparent;
+  position: relative;
+  top: -240px;
+  left: 150px;;
+  -moz-transform: rotate(230deg);
+  -ms-transform: rotate(230deg);
+  -webkit-transform: rotate(230deg);
+  -o-transform: rotate(230deg);
+  transform: rotate(230deg);
+}
+.item-top-left-part .price_text {
+  background: #F16B21;
+  color: white;
+  font-size: 1.500em;
+  font-weight: 600;
+  -moz-transform: rotate(129deg);
+  -ms-transform: rotate(129deg);
+  -webkit-transform: rotate(129deg);
+  -o-transform: rotate(129deg);
+  transform: rotate(129deg);
+  position: relative;
+  top: 23px;
+  left: 9px;
+}
+.item-page-wrapper p {
+  font-weight: 100;
+  font-size: 16px;
+  color: #B5B5B5;
+}
+.item-short-description {
+  font-style: italic;
+}
+.item-short-description {
+  padding-bottom: 40px;
+  padding-left: 25px;
+}
+.item-size {
+  padding-left: 25px;
+}
+.item-size div {
+    //width: 50%;
+  float: left;
+}
+.item-size-number {
+  color: #f16b21;
+  padding-bottom: 50px;
+}
+.item-size-number h4, .item-size-number span {
+  float: left;
+}
+.item-size-number {
+   font-size: 40px;
+   font-weight: 600;
+}
+.item-size-number span {
+  font-size: 50%;
+  vertical-align: super;
+}
+.item-another-images li {
+  list-style: none;
+  //width: 25%;
+  width: 90px;
+  height: 90px;
+  margin: 0 2% 0 2%;
+  float: left;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border: 1px solid #F16B21;
+}
+.item-another-images li img {
+  //position: relative;
+  //top: 4px;
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+}
+.item-bottom-part {
+  padding-top: 80px;
+  clear: both;
+  padding-left: 25px;
+}
+.item-another-images ul {
+  position: relative;
+  left: 5%;
+}
+.item-top-right-part .add-too-cart .form-actions img {
+  width: 45px;
+  height: 45px;
+}
+.item-top-right-part .add-too-cart .form-actions input {
+  padding: 6px 2px 4px 25px !important;
+  text-align: left!important;
+}
+.item-top-right-part .form-actions img {
+  padding-left: 18px;
+}
+.item-top-right-part .articles-item-button-up {
+  padding-bottom: 40px0!important;
+  padding-top: 40px0!important;
+  padding-left: 0!important;
+}
+.item-top-right-part .add-too-cart a {
+  font-size: 13px!important;
+}
+.item-top-right-part .link-too-info {
+  padding-top: 10px;
+}
+.item-top-right-part .form-actions {left: 0!important;}
+

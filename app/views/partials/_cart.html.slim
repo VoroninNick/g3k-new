@@ -1,0 +1,90 @@
+div style='display:none'
+  #g3k-shopping-cart-form
+    #cart-wrapper
+      .cart-wrapper
+        .padding-page-top
+        .cart-title-wrapper
+          .cart-title
+            img src="/assets/g3k-bg-pattern-black-arrow.png"
+            h1
+              |Ваша корзина
+            img src="/assets/g3k-bg-pattern-black-arrow-right.png"
+        .cart-content-wrapper
+          .cart-checkout-status
+          .cart-table
+            .cart-table-title
+              .cart-coll-name
+                .table-title
+                  img src="/assets/g3k-h1-arrow.png"
+                  |Назва товару
+              .cart-coll-count
+                .table-title
+                  img src="/assets/g3k-h1-arrow.png"
+                  |Кількість
+                  span
+                    |(шт.)
+              .cart-coll-price
+                .table-title
+                  img src="/assets/g3k-h1-arrow.png"
+                  |Ціна
+                  span
+                    |(грн.)
+              .clear
+          /-@count = 0
+          - line_items = LineItem.where(cart_id: session[:cart].id)
+          - line_items.each do |l|
+            - product = Product.find l.product_id
+            .table-item
+              .table-item-coll-content
+                .table-item-coll-content-inner
+                  .button-delete-item
+                    /= link_to image_tag("/assets/remove-icon-hi.png") + '', product, :confirm => 'Ви впевнені?', :method => :delete
+                    img src="/assets/remove-icon-hi.png"
+                  .image-item
+                    img src=product.image
+                  .about-item
+                    .about-item-title
+                      h1 = product.name
+                    .about-item-text
+                      p = truncate product.short_description, length: 100, omission: '...'
+              .table-item-coll-count
+                span
+                  /-LineItem.all.each do |item|
+                  /  -if (item.cart_id == @cart.id)
+                  /    -@count += item.quantity
+              .table-item-coll-price
+                p
+                  span = product.price
+                  span
+                    | ,00
+              .clear
+            .clear
+          .cart-result
+            .cart-result-inner
+              .cart-result-title
+                .table-title
+                  img src="/assets/g3k-h1-arrow.png"
+                  |Загалом
+                  span
+                    |(грн.)
+              .cart-result-show
+                span
+                  /|153,00
+              .clear
+          .clear
+          .cart-checkout-buttons
+            .cart-checkout-buttons-prev
+              .cart-list-products
+                input  name="commit" type="submit" value="Перелік товарів!"
+              img src="/assets/g3k-button-arrow-back-1.png"
+            .cart-checkout-middle
+            .cart-checkout-buttons-next
+              .form-actions
+                img src="/assets/g3k-button-arrow-1.png"
+                input class="btn btn btn-primary" name="commit" type="submit" value="Спосіб доставки"
+          .clear
+          .call-order-bottom-line.footer_down
+            .call-order-attentions
+              p
+                |*Адміністрація залишає за собою право не відповідати на запити на власний розсуд та без пояснення причин. Будьте ввічливі. Дякую.
+            .clear

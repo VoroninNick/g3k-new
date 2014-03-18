@@ -1,0 +1,94 @@
+doctype html
+html
+  head
+    title G3k
+
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,cyrillic"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false"
+    = javascript_include_tag "//vk.com/js/api/openapi.js?101"
+
+
+body
+  #page-wrapper.for-catalog
+    .header_wraper
+      .header
+        .header_logo
+          = link_to image_tag("logo_ua.png") + '', root_path, :title => 'На головну'
+          .call_to_order
+            .content_text
+              .blind
+              p
+                a href="tel:+380322597997"
+                  font +
+                  |38&nbsp;
+                  font
+                    = '('
+                  |032
+                  font
+                    = ')'
+                  |&nbsp;259 79 97
+            a#call-to-order href="#call-to-order-form" замовити дзвінок
+
+
+        nav.main_menu
+          li.about-us
+            span.about-us-hover-effect
+              img src="/assets/g3k-menu-arrow-2b.png"
+            = link_to 'Про нас', about_path, :class => is_active?("about_us")
+          li.katalog
+            span.katalog-hover-effect
+              img src="/assets/g3k-menu-arrow-2b.png"
+            = link_to 'Каталог', katalog_path, :class => is_active?("katalog")
+          li.publications
+            span.publications-hover-effect
+              img src="/assets/g3k-menu-arrow-2b.png"
+            = link_to 'Публікації', publications_path, :class => is_active?("publications")
+          li.contacts
+            span.contacts-hover-effect
+              img src="/assets/g3k-menu-arrow-2b.png"
+            = link_to 'Контакти', contacts_path, :class => is_active?("contacts")
+          .clearinfo-block-content-inner
+        #g3k-shopping-cart.dropzone
+          a#shopping-cart href="#g3k-shopping-cart-form"
+            img src="/assets/g3k-icon-basket-1.svg" title="Корзина"
+        #mobile-menu-button
+          .mmb-line1.mmb
+          .mmb-line2.mmb
+          .mmb-line3.mmb
+    #content-wrapper
+      .catalog-page-title-wrapper
+        .title_wrapper
+          .title Каталог продукції
+      .catalog-content-wrapper
+        .catalog-sidebar-menu-wrapper
+          .catalog-sidebar-menu-inner
+            .catalog-sidebar-menu
+              ul#navigation.loading-group-menu
+                - get_categories.each do | category |
+                  li.loading-group-item
+                    .loading-group-item-title-wrapper
+                      .group-menu-item-arrow-first
+                        img src="/assets/g3k-h1-arrow.png"
+                      .group-menu-item-title
+                        = link_to category.name, category_path(category.category_url)
+                      .group-menu-item-arrow-second
+                        .group-menu-button-border
+                        /img src="/assets/g3k-sidebar-menu-arrow-1.png"
+                    ul#category.loading-group-sub-menu
+                      - category.child_categories.each do | sub_category |
+                        li
+                          /p#toggle_tree =  sub_category.name
+                          = link_to sub_category.name, category_path(sub_category.category_url)
+                          ul#category.last-category-level
+                            - sub_category.child_categories.each do | sub_category |
+                              li
+                                = link_to sub_category.name, category_path(sub_category.category_url)
+        .catalog-page-items-wrapper
+          .catalog-page-items
+            = yield
+            .clear
+        .clear
+    = render :partial => 'partials/footer'

@@ -1,0 +1,141 @@
+// Place all the styles related to the publications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.banner-select-publications-inner, .publications-page-wrapper, .slider-wrapper {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+.publications-page-title-wrapper {
+  padding-top: 26px;
+  padding-bottom: 46px;
+}
+.banner-select-publications-wrapper {
+  background: #E5E5E5;
+}
+.banner-select-publications-inner .about_title {
+  font-weight: 600;
+  padding-bottom: 14px;
+}
+#slides2 {
+  height: 450px!important;
+  overflow: hidden!important;
+}
+.publication-slider-container2 li>img {
+  width: 100%;
+}
+.publication-slider-container2 li {
+  position: relative;
+}
+.publication-slider-content {
+  float: right;
+  top: 0px;
+  position: absolute;
+  width: 28%;
+  height: 100%;
+  background: #414242;
+  right: 19%;
+}
+
+.publication-slider-content h2 {
+  color: #F16B21;
+  font-size: 1.625em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 31px;
+  padding-bottom: 20px;
+}
+.publication-slider-content p {
+  color: #E5E5E5;
+  font-size: 0.875em;
+  font-weight: 200;
+}
+.publication-slider-content-inner {
+  padding: 7%;
+}
+.publication-slider-content-read-more {
+  position: relative;
+  width: 80%;
+  display: block;
+  top: 80px;
+  float: left;
+  clear: both;
+  background: url("../assets/order-form-background-button.jpg") !important;
+  overflow: hidden;
+}
+.publication-slider-content-read-more img, .publication-slider-content-read-more a {
+  float: left;
+}
+.publication-slider-content-read-more>img {
+  padding-left: 20px;
+}
+.publication-slider-content-read-more a {
+  color: white;
+  font-size: 1.625em;
+  padding: 7px 0px 7px 70px;
+}
+.banner-select-publications-inner {
+  padding-bottom: 42px;
+}
+.item-news {
+  padding-top: 42px;
+  width: 50%;
+  float: left;
+  min-height: 220px;
+}
+.item-news .image, .item-news .content {
+  float: left;
+}
+.item-news .image {
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  border: 2px solid #989898;
+}
+.item-news .content {
+  width: 60%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.item-news .image a img {
+  height: 100%;
+}
+.publications-page-title-wrapper .title {
+  width: 215px!important;
+}
+.item-news .content a {
+  text-decoration: none;
+  color: #F16B21;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(241, 107, 33, 0.35);
+  transition: 0.6s ease-out all;
+  -webkit-transition: 0.6s ease-out all;
+}
+.item-news .content a:hover {
+  border-bottom: 1px solid #f16b21;
+}
+.item-news .content a {
+  text-decoration: none;
+}
+.publications-page-wrapper {
+  padding-top: 27px;
+}
+#slides3 .slides-pagination {
+  width: 20%;
+  left: 0%;
+  margin-bottom: 2%;
+}
+#slides3 {
+  height: 450px!important;
+}
+.publication-slider-content-read-more a:before {
+  content: '';
+  background: url('../assets/g3k-button-arrow-1.png')no-repeat;
+  width: 55px;
+  position: absolute;
+  height: 65px;
+  top: 0px;
+  left: 13px;
+  z-index: 234242;
+}
