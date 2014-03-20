@@ -51,6 +51,18 @@ $(document).ready ->
   $(".list_of_products_wrapper .cart-checkout-buttons-next .form-actions").click ->
     $('.list_of_products_wrapper').addClass(' dn')
     $('.method_of_delivery_and_payment_wrapper').removeClass(' dn')
+
+    $('.method_of_delivery_and_payment h1').addClass(' active-status-order-form')
+    $('.list_of_products h1').removeClass(' active-status-order-form')
+
+    $('.list_of_products .itm .ao1').removeClass(' dn')
+    $('.list_of_products .itm .ao2').addClass(' dn')
+
+    $('.method_of_delivery_and_payment .itm .ao2').removeClass(' dn')
+    $('.method_of_delivery_and_payment .itm .ao1').addClass(' dn')
+
+    $('.method_of_delivery_and_payment .itm').removeClass(' rr')
+
     $('#colorbox').addClass(' modapw')
 #    scroll top
     $("html, body").animate
@@ -58,9 +70,22 @@ $(document).ready ->
       , 600
       false
 
+
   $('.method_of_delivery_and_payment_wrapper .cart-checkout-buttons-next .form-actions').click ->
     $('.method_of_delivery_and_payment_wrapper').addClass(' dn')
     $('.confirmation_wrapper').removeClass(' dn')
+
+    $('.confirmation h1').addClass(' active-status-order-form')
+    $('.method_of_delivery_and_payment h1').removeClass(' active-status-order-form')
+
+    $('.method_of_delivery_and_payment .itm .ao1').removeClass(' dn')
+    $('.method_of_delivery_and_payment .itm .ao2').addClass(' dn')
+
+    $('.confirmation .itm .ao2').removeClass(' dn')
+    $('.confirmation .itm .ao1').addClass(' dn')
+
+    $('.confirmation .itm').removeClass(' rr')
+
     #    scroll top
     $("html, body").animate
       scrollTop: 0
@@ -70,6 +95,8 @@ $(document).ready ->
   $('.confirmation_wrapper .cart-list-products input').click ->
     $('.confirmation_wrapper').addClass(' dn')
     $('.method_of_delivery_and_payment_wrapper').removeClass(' dn')
+    $('.confirmation h1').removeClass(' active-status-order-form')
+    $('.method_of_delivery_and_payment h1').addClass(' active-status-order-form')
     #    scroll top
     $("html, body").animate
       scrollTop: 0
@@ -79,6 +106,8 @@ $(document).ready ->
   $('.method_of_delivery_and_payment_wrapper .cart-list-products input').click ->
     $('.method_of_delivery_and_payment_wrapper').addClass(' dn')
     $('.list_of_products_wrapper').removeClass(' dn')
+    $('.method_of_delivery_and_payment h1').removeClass(' active-status-order-form')
+    $('.list_of_products h1').addClass(' active-status-order-form')
     #    scroll top
     $("html, body").animate
       scrollTop: 0

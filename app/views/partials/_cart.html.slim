@@ -9,18 +9,34 @@ div style='display:none'
             h1
               |Ваша корзина
             img src="/assets/g3k-bg-pattern-black-arrow-right.png"
+            .clear
         .cart-content-wrapper
           .cart-checkout-status
             ul
               li.list_of_products
-                h1
+                h1.active-status-order-form
                   |перелік товарів
+                  .cchs
+                    .itmw
+                      .itm
+                        img.ao1.dn src=asset_path("arrow-order-01.svg")
+                        img.ao2 src=asset_path("arrow-order-02.svg")
               li.method_of_delivery_and_payment
                 h1
                   |спосіб доставки та оплата
+                  .cchs
+                    .itmw
+                      .itm.rr
+                        img.ao1 src=asset_path("arrow-order-01.svg")
+                        img.ao2.dn src=asset_path("arrow-order-02.svg")
               li.confirmation
                 h1
                   |підтвердження
+                  .cchs
+                    .itmw
+                      .itm.rr
+                        img.ao1 src=asset_path("arrow-order-01.svg")
+                        img.ao2.dn src=asset_path("arrow-order-02.svg")
           .list_of_products_wrapper
             .cart-table
               .cart-table-title
