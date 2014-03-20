@@ -1325,6 +1325,7 @@ html, body {
 }
 #cboxLoadedContent {
   overflow: hidden!important;
+  height: auto !important;
 }
 #new_call_order label {
   color: #f16b21;
@@ -1617,4 +1618,20 @@ html, body {
 .similar-products .add-too-cart .form-actions {
   width: 100%!important;
   left: 0;
+}
+
+.contact-data {
+  padding: 38px 28px 18px 28px;
+}
+
+.contact-data label, .input-nova label {
+  color: #F16B21;
+  font-size: 14px;
+  padding: 5px 15px 20px 15px;
+  margin-left: 5px;
+  display: block;
+  text-transform: uppercase;
+}
+#cboxWrapper {
+  height: 100% !important;
 }

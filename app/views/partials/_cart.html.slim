@@ -84,17 +84,13 @@ div style='display:none'
                 .clear
             .clear
             .cart-checkout-buttons
-              .cart-checkout-buttons-prev
-                .cart-list-products
-                  input  name="commit" type="submit" value="Перелік товарів!"
-                img src="/assets/g3k-button-arrow-back-1.png"
               .cart-checkout-middle
               .cart-checkout-buttons-next
                 .form-actions
                   img src="/assets/g3k-button-arrow-1.png"
                   input class="btn btn btn-primary" name="commit" type="submit" value="Спосіб доставки"
             .clear
-          .method_of_delivery_and_payment_wrapper
+          .method_of_delivery_and_payment_wrapper.dn
             .cart-table
               .cart-table-title
                 .cart-coll-name
@@ -105,12 +101,15 @@ div style='display:none'
             .contact-data
               = simple_form_for get_order_products, :html => {:class => 'form-horizontal' } do |f|
                 .form-horizontal-left
-                  = f.input :name, :required => true, placeholder: 'Микола Валерійович', :label=>false
+                  = f.input :name, :required => true, placeholder: 'Микола', :label=>false
                   = f.label :"Ваше ім'я", :for=>"contact_name"
-                  = f.input :email, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
-                  = f.label :"Контактний телефон", :for=>"contact_email"
-                  = f.input :phone, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
-                  = f.label :"Електронна пошта", :for=>"contact_phone"
+                  = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
+                  = f.label :"Контактний телефон", :for=>"contact_phone"
+                .form-horizontal-right
+                  = f.input :last_name, :required => true, placeholder: 'Воронін', :label=>false
+                  = f.label :"Ваше прізвище", :for=>"contact_last_name"
+                  = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
+                  = f.label :"Електронна пошта", :for=>"contact_email"
                 .clear
             .cart-table
               .cart-table-title
@@ -134,16 +133,17 @@ div style='display:none'
                 a.link-to-nova href="http://novaposhta.ua/frontend/nearest/ua"
                   |Див. на карті
                 .clear
-                p
-                  |Термін доставки
-                  span
-                    |1-2 дні
-                  |.
-                p
-                  |Вартість доставки
-                  span
-                    |15 грн*
-                  |.
+                .p
+                  p
+                    |Термін доставки
+                    span
+                      |1-2 дні
+                    |.
+                  p
+                    |Вартість доставки
+                    span
+                      |15 грн*
+                    |.
             .cart-table
               .cart-table-title
                 .cart-coll-name
@@ -152,16 +152,57 @@ div style='display:none'
                     |СПОСІБ ОПЛАТИ
                 .clear
               .method_of_payment
-                input type="checkbox" id="privat"
-                  |ПРИВАТБАНК
-                label for="privat"
-                  |Передоплата на рахунок компанії вПриватбанку
-                input type="checkbox" checked="checked" id="opo"
-                  |Оплата при отриманні
-                label for="opo"
-                  |Це платіж при отриманні товару у відділенні Нової пошти. Даний вид платежу зручний, але не вигідний через додаткову комісію у відділенні Нової Пошти.
-
-          .confirmation_wrapper
+                .mopl
+                  label for="privat"
+                    input type="checkbox" id="privat"
+                    |ПРИВАТБАНК
+                  span
+                    |Передоплата на рахунок компанії вПриватбанку
+                  h1
+                    |Наші реквізити:
+                  ul
+                    li
+                      |Отримувач: ПАО КБ ПриватБанк
+                    li
+                      |Код отримувача (ОКПО, ЕГРПОУ): 14360570
+                    li
+                      |Код банку отримувача (МФО): 305299
+                    li
+                      |Рахунок отримувача: 29244825509100
+                    li
+                      |Призначення платежу: для поповнення картки № (номер картки), ПІБ та ІПН одержувача
+                .mopr
+                  label for="opo"
+                    input type="checkbox" checked="checked" id="opo"
+                    |Оплата при отриманні
+                  span
+                    |Це платіж при отриманні товару у відділенні Нової пошти. Даний вид платежу зручний, але не вигідний через додаткову комісію у відділенні Нової Пошти.
+                .clear
+            .cart-result
+              .cart-result-inner
+                .cart-result-title
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |Загалом
+                    span
+                      |(грн.)
+                .cart-result-show
+                  span
+                    /|153,00
+                .clear
+            .clear
+            .cart-checkout-buttons
+              .cart-checkout-buttons-prev
+                .cart-list-products
+                  input  name="commit" type="submit" value="перелік товарів" class=""
+                img src="/assets/g3k-button-arrow-back-1.png"
+              .cart-checkout-middle
+              .cart-checkout-buttons-next
+                .form-actions
+                  img src="/assets/g3k-button-arrow-1.png"
+                  input class="btn btn btn-primary" name="commit" type="submit" value="ПІДТВЕРДЖЕННЯ"
+            .clear
+          .confirmation_wrapper.dn
             .cart-table
               .cart-table-title
                 .cart-coll-name

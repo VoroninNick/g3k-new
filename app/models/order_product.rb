@@ -1,5 +1,6 @@
 class Order_product < MailForm::Base
   attribute :name,      :validate => true
+  attribute :last_name
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :phone
   attribute :time_from

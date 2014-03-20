@@ -47,7 +47,43 @@ $(document).ready ->
     $(".info_block_wrapper").toggleClass " blur"
     $(".footer_wrapper").toggleClass " blur"
 
+# order products  /cart
+  $(".list_of_products_wrapper .cart-checkout-buttons-next .form-actions").click ->
+    $('.list_of_products_wrapper').addClass(' dn')
+    $('.method_of_delivery_and_payment_wrapper').removeClass(' dn')
+    $('#colorbox').addClass(' modapw')
+#    scroll top
+    $("html, body").animate
+      scrollTop: 0
+      , 600
+      false
 
+  $('.method_of_delivery_and_payment_wrapper .cart-checkout-buttons-next .form-actions').click ->
+    $('.method_of_delivery_and_payment_wrapper').addClass(' dn')
+    $('.confirmation_wrapper').removeClass(' dn')
+    #    scroll top
+    $("html, body").animate
+      scrollTop: 0
+      , 600
+      false
+
+  $('.confirmation_wrapper .cart-list-products input').click ->
+    $('.confirmation_wrapper').addClass(' dn')
+    $('.method_of_delivery_and_payment_wrapper').removeClass(' dn')
+    #    scroll top
+    $("html, body").animate
+      scrollTop: 0
+      , 600
+      false
+
+  $('.method_of_delivery_and_payment_wrapper .cart-list-products input').click ->
+    $('.method_of_delivery_and_payment_wrapper').addClass(' dn')
+    $('.list_of_products_wrapper').removeClass(' dn')
+    #    scroll top
+    $("html, body").animate
+      scrollTop: 0
+      , 600
+      false
 
   # load facebook social button
   ((d, s, id) ->

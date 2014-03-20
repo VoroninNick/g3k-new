@@ -302,9 +302,7 @@
   border-left: 1px dotted #808080;
 }
 
-.list_of_products_wrapper, .confirmation_wrapper {
-  display: none;
-}
+
 .delivery-method {
   padding: 30px;
 }
@@ -313,10 +311,16 @@
   font-size: 20px;
   font-weight: 500;
 }
-.delivery-method p {
+.delivery-method>p {
   color: #CBCBCB;
   font-size: 20px;
   padding-bottom: 30px;
+  line-height: 36px;
+}
+.delivery-method .p p {
+  color: #CBCBCB;
+  font-size: 20px;
+  line-height: 36px;
 }
 .delivery-method p a {
   color: #F16B21;
@@ -330,11 +334,6 @@
 .delivery-method p span {
   color: #F16B21;
   font-size: 20px;
-}
-.input-nova label {
-  color: #F16B21;
-  font-size: 14px;
-  font-weight: 100;
 }
 .input-nova {
   width: 65%;
@@ -353,4 +352,89 @@
 }
 .link-to-nova {
   margin: 10px 0 0 60px;
+}
+.method_of_payment input {
+  width: 1rem;
+}
+.method_of_payment label {
+  color: #F16B21;
+  font-size: 20px;
+  margin-top: 20px;
+  display: block;
+}
+.method_of_payment span {
+  display: block;
+  color: #808080;
+  font-size: 13px;
+  padding-left: 24px;
+  padding-bottom: 50px;
+}
+.method_of_payment {
+  margin: 0 28px;
+  border-bottom: 1px dotted #808080;
+}
+.method_of_payment h1 {
+  color: #F16B21;
+  font-size: 20px;
+  font-weight: 300;
+}
+.method_of_payment ul li {
+  list-style: none;
+  color: #CBCBCB;
+  font-size: 20px;
+  padding-left: 22px;
+  position: relative;
+}
+.method_of_payment ul li:before{
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 20px;
+  height: 1px;
+  background: #CBCBCB;
+}
+.method_of_payment ul {
+  padding-top: 30px;
+}
+.mopl, .mopr {
+  width: 49%;
+  float: left;
+  margin: 15px 0;
+}
+.mopl {
+  border-right: 1px dotted #808080;
+}
+.mopr {
+  padding-left: 15px;
+}
+
+.method_of_delivery_and_payment_wrapper .cart-list-products input {
+  width: 180px;
+}
+
+.method_of_delivery_and_payment_wrapper .form-actions {
+  width: 95% !important;
+}
+.confirmation_wrapper .form-actions {
+  width: 80% !important;
+}
+.confirmation_wrapper .form-actions input {
+  left: 10px;
+}
+.confirmation_wrapper .cart-list-products input {
+  width: 86% !important;
+}
+.dn {
+  display: none;
+}
+
+.modapw {
+  height: 17775px !important;
+}
+.cart-list-products input, .form-actions input {cursor: pointer;}
+
+.contact-data .form-horizontal-left, .contact-data .form-horizontal-right {
+  width: 46%;
 }
