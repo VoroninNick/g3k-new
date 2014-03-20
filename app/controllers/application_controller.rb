@@ -23,9 +23,14 @@ class ApplicationController < ActionController::Base
      render :new
    end
  end
- def test
-   render :action => "", :layout => ""
- end
+
+   helper_method :get_order_products
+
+   def get_order_products
+     @order_product = Order_product.new(params[:order_product])
+     return @order_product
+   end
+
   helper_method :get_order
 
   def get_order

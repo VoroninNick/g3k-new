@@ -36,6 +36,8 @@ G3k::Application.routes.draw do
   get '/garantia_jakosti' => 'garantia_jakosti#quality_assurance', :as => :quality_assurance
 
   resources "contacts", only: [:new, :create]
+
+  resources "order_products", only: [:new, :create]
 #
 #get '/products' => 'products#index', :as => :products
 ##get '/product/:id' => 'products#show', :as => :product_item
