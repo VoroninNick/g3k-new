@@ -23,7 +23,9 @@ class ApplicationController < ActionController::Base
      render :new
    end
  end
-
+ def test
+   render :action => "", :layout => ""
+ end
   helper_method :get_order
 
   def get_order

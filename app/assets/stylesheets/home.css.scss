@@ -651,25 +651,25 @@ option:checked {
   overflow: hidden !important;
 }
 .slides-container li {
-  width: 1820px !important;
+  width: 100% !important;
   z-index: 1 !important;
 }
 .container {
   position: absolute;
   top: 21%;
-  left: 33%;
+  left: 40%;
 }
 
 .image-layer1 {
   position: absolute;
   top: 0;
   left: 3%;
-  width: 27%;
+  width: 35%;
 }
 .image-layer2 {
   position: absolute;
   bottom: 20%;
-  right: 38%;
+  right: 12%;
   width: 200px;
 }
 .container h1 {

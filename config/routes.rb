@@ -34,6 +34,7 @@ G3k::Application.routes.draw do
   get '/pracjujemo_z' => 'pracjujemo_z#working_with', :as => :pracjujemo
   get '/bezproblemne_povernennja' => 'bezproblemne_povernennja#smooth_return', :as => :smooth_return
   get '/garantia_jakosti' => 'garantia_jakosti#quality_assurance', :as => :quality_assurance
+
   resources "contacts", only: [:new, :create]
 #
 #get '/products' => 'products#index', :as => :products

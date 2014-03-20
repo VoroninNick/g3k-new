@@ -225,4 +225,132 @@
   font-size: 14px;
   color: #F16B21;
 }
+.cart-checkout-status ul li {
+  list-style: none;
+  display: inline-block;
+}
 
+.cart-checkout-status ul {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.cart-checkout-status ul li h1 {
+  font-size: 16px;
+  color: #808080;
+  text-transform: uppercase;
+  padding: 0 10px;
+  font-weight: 100;
+}
+
+.data-deliver-table h1 {
+  color: #F16B21;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  padding-top: 16px;
+}
+
+.left-top, .right-top, .left-bottom, .right-bottom {
+  width: 48%;
+  float: left;
+  margin: 8px 0;
+}
+.top-tbl, .bottom-tbl {
+  border-bottom: 1px dotted #808080;
+  margin: 0 30px;
+}
+
+.c-w-t, .c-w-c {
+  float: left;
+}
+.c-w-t {
+  padding-right: 22px;
+}
+.c-w-t h2 {
+  color: #F16B21;
+  font-weight: 200;
+  font-size: 20px;
+  padding-top: 10px;
+}
+.c-w-c h2 {
+  color: #CBCBCB;
+  font-weight: 500;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.method_of_delivery_and_payment_wrapper .cart-checkout-buttons-prev input {
+  width: 315px;
+}
+.method_of_delivery_and_payment_wrapper .cart-checkout-buttons-next .form-actions {
+  width: 85%;
+}
+.method_of_delivery_and_payment_wrapper .cart-checkout-buttons-next input {
+  left: 13px;
+}
+.list_of_products_wrapper .cart-checkout-buttons-next .form-actions {
+  width: 100%;
+}
+.list_of_products_wrapper .cart-checkout-buttons-next input {
+  left: 20px;
+}
+
+.right-top, .right-bottom {
+  padding-left: 30px;
+  border-left: 1px dotted #808080;
+}
+
+.list_of_products_wrapper, .confirmation_wrapper {
+  display: none;
+}
+.delivery-method {
+  padding: 30px;
+}
+.delivery-method h1 {
+  color: #F16B21;
+  font-size: 20px;
+  font-weight: 500;
+}
+.delivery-method p {
+  color: #CBCBCB;
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+.delivery-method p a {
+  color: #F16B21;
+  font-size: 20px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(241, 107, 33, 0.3);
+}
+.delivery-method p a:hover {
+  border-bottom: 1px solid rgba(241, 107, 33, 0.7);
+}
+.delivery-method p span {
+  color: #F16B21;
+  font-size: 20px;
+}
+.input-nova label {
+  color: #F16B21;
+  font-size: 14px;
+  font-weight: 100;
+}
+.input-nova {
+  width: 65%;
+}
+.input-nova, .link-to-nova {
+  float: left;
+}
+.delivery-method a {
+  color: #F16B21;
+  font-size: 20px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(241, 107, 33, 0.3);
+}
+.delivery-method a:hover {
+  border-bottom: 1px solid rgba(241, 107, 33, 0.7);
+}
+.link-to-nova {
+  margin: 10px 0 0 60px;
+}

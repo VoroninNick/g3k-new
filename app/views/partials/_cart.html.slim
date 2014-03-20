@@ -11,78 +11,243 @@ div style='display:none'
             img src="/assets/g3k-bg-pattern-black-arrow-right.png"
         .cart-content-wrapper
           .cart-checkout-status
-          .cart-table
-            .cart-table-title
-              .cart-coll-name
-                .table-title
-                  img src="/assets/g3k-h1-arrow.png"
-                  |Назва товару
-              .cart-coll-count
-                .table-title
-                  img src="/assets/g3k-h1-arrow.png"
-                  |Кількість
+            ul
+              li.list_of_products
+                h1
+                  |перелік товарів
+              li.method_of_delivery_and_payment
+                h1
+                  |спосіб доставки та оплата
+              li.confirmation
+                h1
+                  |підтвердження
+          .list_of_products_wrapper
+            .cart-table
+              .cart-table-title
+                .cart-coll-name
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |Назва товару
+                .cart-coll-count
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |Кількість
+                    span
+                      |(шт.)
+                .cart-coll-price
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |Ціна
+                    span
+                      |(грн.)
+                .clear
+            /-@count = 0
+            - line_items = LineItem.where(cart_id: session[:cart].id)
+            - line_items.each do |l|
+              - product = Product.find l.product_id
+              .table-item
+                .table-item-coll-content
+                  .table-item-coll-content-inner
+                    .button-delete-item
+                      /= link_to image_tag("/assets/remove-icon-hi.png") + '', product, :confirm => 'Ви впевнені?', :method => :delete
+                      img src="/assets/remove-icon-hi.png"
+                    .image-item
+                      img src=product.image
+                    .about-item
+                      .about-item-title
+                        h1 = product.name
+                      .about-item-text
+                        p = truncate product.short_description, length: 100, omission: '...'
+                .table-item-coll-count
                   span
-                    |(шт.)
-              .cart-coll-price
-                .table-title
-                  img src="/assets/g3k-h1-arrow.png"
-                  |Ціна
-                  span
-                    |(грн.)
+                    /-LineItem.all.each do |item|
+                    /  -if (item.cart_id == @cart.id)
+                    /    -@count += item.quantity
+                .table-item-coll-price
+                  p
+                    span = product.price
+                    span
+                      | ,00
+                .clear
               .clear
-          /-@count = 0
-          - line_items = LineItem.where(cart_id: session[:cart].id)
-          - line_items.each do |l|
-            - product = Product.find l.product_id
-            .table-item
-              .table-item-coll-content
-                .table-item-coll-content-inner
-                  .button-delete-item
-                    /= link_to image_tag("/assets/remove-icon-hi.png") + '', product, :confirm => 'Ви впевнені?', :method => :delete
-                    img src="/assets/remove-icon-hi.png"
-                  .image-item
-                    img src=product.image
-                  .about-item
-                    .about-item-title
-                      h1 = product.name
-                    .about-item-text
-                      p = truncate product.short_description, length: 100, omission: '...'
-              .table-item-coll-count
-                span
-                  /-LineItem.all.each do |item|
-                  /  -if (item.cart_id == @cart.id)
-                  /    -@count += item.quantity
-              .table-item-coll-price
-                p
-                  span = product.price
+            .cart-result
+              .cart-result-inner
+                .cart-result-title
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |Загалом
+                    span
+                      |(грн.)
+                .cart-result-show
                   span
-                    | ,00
-              .clear
+                    /|153,00
+                .clear
             .clear
-          .cart-result
-            .cart-result-inner
-              .cart-result-title
-                .table-title
-                  img src="/assets/g3k-h1-arrow.png"
-                  |Загалом
+            .cart-checkout-buttons
+              .cart-checkout-buttons-prev
+                .cart-list-products
+                  input  name="commit" type="submit" value="Перелік товарів!"
+                img src="/assets/g3k-button-arrow-back-1.png"
+              .cart-checkout-middle
+              .cart-checkout-buttons-next
+                .form-actions
+                  img src="/assets/g3k-button-arrow-1.png"
+                  input class="btn btn btn-primary" name="commit" type="submit" value="Спосіб доставки"
+            .clear
+          .method_of_delivery_and_payment_wrapper
+            .cart-table
+              .cart-table-title
+                .cart-coll-name
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |ВАШІ КОНТАКТНІ ДАНІ
+                .clear
+            .contact-data
+              = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f|
+                .form-horizontal-left
+                  = f.input :name, :required => true, placeholder: 'Микола Валерійович', :label=>false
+                  = f.label :"Ваше ім'я", :for=>"contact_name"
+                  = f.input :email, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
+                  = f.label :"Контактний телефон", :for=>"contact_email"
+                  = f.input :phone, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
+                  = f.label :"Електронна пошта", :for=>"contact_phone"
+                .clear
+            .cart-table
+              .cart-table-title
+                .cart-coll-name
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |СПОСІБ ДОСТАВКИ
+                .clear
+              .delivery-method
+                h1
+                  |ДОСТАВКА ПО УКРАЇНІ ЗДІЙСНЮЄТЬСЯ НОВОЮ ПОЧТОЮ.
+                p
+                  |Доставка здійснюється у бажане відділення Нової Пошти у Вашому місті. Ознайомтесь та знайдіть найближче до Вас
+                  a  href="http://novaposhta.ua/frontend/brunchoffices/ua"
+                    |&nbsp;відділення Нової Почти
+                  |.
+                .input-nova
+                  input placeholder="Відділення №16, просп. Червоної Калини, 76"
+                  label
+                    |виберіть найближче до вас відділення нової почти
+                a.link-to-nova href="http://novaposhta.ua/frontend/nearest/ua"
+                  |Див. на карті
+                .clear
+                p
+                  |Термін доставки
                   span
-                    |(грн.)
-              .cart-result-show
-                span
-                  /|153,00
-              .clear
-          .clear
-          .cart-checkout-buttons
-            .cart-checkout-buttons-prev
-              .cart-list-products
-                input  name="commit" type="submit" value="Перелік товарів!"
-              img src="/assets/g3k-button-arrow-back-1.png"
-            .cart-checkout-middle
-            .cart-checkout-buttons-next
-              .form-actions
-                img src="/assets/g3k-button-arrow-1.png"
-                input class="btn btn btn-primary" name="commit" type="submit" value="Спосіб доставки"
-          .clear
+                    |1-2 дні
+                  |.
+                p
+                  |Вартість доставки
+                  span
+                    |15 грн*
+                  |.
+            .cart-table
+              .cart-table-title
+                .cart-coll-name
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |СПОСІБ ОПЛАТИ
+                .clear
+              .method_of_payment
+                input type="checkbox" id="privat"
+                  |ПРИВАТБАНК
+                label for="privat"
+                  |Передоплата на рахунок компанії вПриватбанку
+                input type="checkbox" checked="checked" id="opo"
+                  |Оплата при отриманні
+                label for="opo"
+                  |Це платіж при отриманні товару у відділенні Нової пошти. Даний вид платежу зручний, але не вигідний через додаткову комісію у відділенні Нової Пошти.
+
+          .confirmation_wrapper
+            .cart-table
+              .cart-table-title
+                .cart-coll-name
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |дані про покупку
+                .clear
+            .data-deliver-table
+              .top-tbl
+                .left-top
+                  h1
+                    |Товар
+                  .c-w
+                    .c-w-t
+                      h2
+                        |Тип товару:
+                    .c-w-c
+                      h2
+                        |Кубік рубіка 5x5 — 12 шт
+                      h2
+                        |Кубік рубіка 5x5 — 12 шт
+                .right-top
+                  h1
+                    |Контактні дані отримувача
+                  .c-w
+                    .c-w-t
+                      h2
+                        |Ім’я:
+                      h2
+                        |тел.:
+                      h2
+                        |mail:
+                    .c-w-c
+                      h2
+                        |Константин
+                      h2
+                        |+38 (050) 417 07 28
+                      h2
+                        |kontyantun@gmail.com
+                .clear
+              .bottom-tbl
+                .left-bottom
+                  h1
+                    |Доставка
+                  .c-w
+                    .c-w-t
+                      h2
+                        |Нова почта:
+                    .c-w-c
+                      h2
+                        |Відділення №16
+                .right-bottom
+                  h1
+                    |Оплата
+                  .c-w
+                    .c-w-t
+                      h2
+                        |Спосіб оплати:
+                    .c-w-c
+                      h2
+                        |При отриманні
+                .clear
+            .cart-result
+              .cart-result-inner
+                .cart-result-title
+                  .table-title
+                    img src="/assets/g3k-h1-arrow.png"
+                    |Загалом
+                    span
+                      |(грн.)
+                .cart-result-show
+                  span
+                    /|153,00
+                .clear
+            .clear
+            .cart-checkout-buttons
+              .cart-checkout-buttons-prev
+                .cart-list-products
+                  input  name="commit" type="submit" value="Спосіб доставки та оплата" class=""
+                img src="/assets/g3k-button-arrow-back-1.png"
+              .cart-checkout-middle
+              .cart-checkout-buttons-next
+                .form-actions
+                  img src="/assets/g3k-button-arrow-1.png"
+                  input class="btn btn btn-primary" name="commit" type="submit" value="ЗАМОВИТИ!"
+            .clear
           .call-order-bottom-line.footer_down
             .call-order-attentions
               p
