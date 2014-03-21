@@ -14,7 +14,7 @@ div style='display:none'
           .cart-checkout-status
             ul
               li.list_of_products
-                h1.active-status-order-form
+                h1.active-status-order-form.list-of-products-active-status-order-form
                   |перелік товарів
                   .cchs
                     .itmw
@@ -115,17 +115,22 @@ div style='display:none'
                     |ВАШІ КОНТАКТНІ ДАНІ
                 .clear
             .contact-data
-              = simple_form_for get_order_products, :html => {:class => 'form-horizontal' } do |f|
+              /= simple_form_for get_order_products, :html => {:class => 'form-horizontal' } do |f|
+              form action="/payments" method="POST" id="product-order-form" class="form-horizontal"
                 .form-horizontal-left
-                  = f.input :name, :required => true, placeholder: 'Микола', :label=>false
-                  = f.label :"Ваше ім'я", :for=>"contact_name"
-                  = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
-                  = f.label :"Контактний телефон", :for=>"contact_phone"
+                  input type="text" size="20" autocomplete="off" data-encrypted-name="name" placeholder="Микола" id="name"
+                  label for="name"
+                    |Ваше ім'я
+                  input type="text" size="12" autocomplete="off" data-encrypted-name="phone" placeholder="+38 (050) 417 07 28" id="phone"
+                  label for="phone"
+                    |Контактний телефон
                 .form-horizontal-right
-                  = f.input :last_name, :required => true, placeholder: 'Воронін', :label=>false
-                  = f.label :"Ваше прізвище", :for=>"contact_last_name"
-                  = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
-                  = f.label :"Електронна пошта", :for=>"contact_email"
+                  input type="text" size="20" autocomplete="off" data-encrypted-name="last_name" placeholder="Воронін" id="last_name"
+                  label for="last_name"
+                    |Ваше прізвище
+                  input type="text" size="20" autocomplete="off" data-encrypted-name="email" placeholder="voronin.nick@gmail.com8" id="email"
+                  label for="email"
+                    |Електронна пошта
                 .clear
             .cart-table
               .cart-table-title
@@ -143,8 +148,8 @@ div style='display:none'
                     |&nbsp;відділення Нової Почти
                   |.
                 .input-nova
-                  input placeholder="Відділення №16, просп. Червоної Калини, 76"
-                  label
+                  input type="text" size="20" autocomplete="off" data-encrypted-name="address" placeholder="Відділення №16, просп. Червоної Калини, 76" id="address"
+                  label for="address"
                     |виберіть найближче до вас відділення нової почти
                 a.link-to-nova href="http://novaposhta.ua/frontend/nearest/ua"
                   |Див. на карті
@@ -169,8 +174,9 @@ div style='display:none'
                 .clear
               .method_of_payment
                 .mopl
+
+                  input type="checkbox" data-encrypted-name="privat" id="privat" class="radio" value="1" name="fooby[1][]"
                   label for="privat"
-                    input type="checkbox" id="privat"
                     |ПРИВАТБАНК
                   span
                     |Передоплата на рахунок компанії вПриватбанку
@@ -188,8 +194,8 @@ div style='display:none'
                     li
                       |Призначення платежу: для поповнення картки № (номер картки), ПІБ та ІПН одержувача
                 .mopr
+                  input type="checkbox" checked="checked" data-encrypted-name="opo" id="opo" class="radio" value="1" name="fooby[1][]"
                   label for="opo"
-                    input type="checkbox" checked="checked" id="opo"
                     |Оплата при отриманні
                   span
                     |Це платіж при отриманні товару у відділенні Нової пошти. Даний вид платежу зручний, але не вигідний через додаткову комісію у відділенні Нової Пошти.
