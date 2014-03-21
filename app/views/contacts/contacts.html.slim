@@ -67,7 +67,7 @@
         .form-horizontal-right
           = f.input :message, :as => :text, :required => false, placeholder: 'Зателефонувати мені по питання придбання 1000 кубіків рубіків у Львові.', :label=>false
           = f.label :"Додаткові відомості", :for=>"contact_message"
-          .form-actions
+          .form-actions.contacts-button-action
             img src="assets/g3k-button-arrow-1.png"
             = f.button :submit, 'Надіслати !', :class=> "btn btn-primary"
         .clear

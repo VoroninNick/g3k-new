@@ -1564,31 +1564,6 @@ html, body {
 .call-order-button-close {
   float: right;
 }
-//@keyframes slideDown{
-//  0% { top: -30px; }
-//  100% { top: 80px;}
-//}
-//@-webkit-keyframes slideDown{
-//  0% { top: -30px; }
-//  100% { top: 80px;}
-//}
-//@-moz-keyframes slideDown{
-//  0% { top: -30px; }
-//  100% { top: 80px;}
-//}
-//.button_hover_icon {
-//  position: absolute;
-//  top: -30px;
-//  width: 55px;
-//  height: 55px;
-//  background: transparent url(/assets/g3k-button-arrow-1.png) no-repeat top left;
-//  background: green;
-//  left: 20px;
-//  opacity: 0.4;
-//}
-//.form-actions:hover .button_hover_icon{
-//  -webkit-animation: slideDown 0.9s linear infinite;
-//}
 @keyframes slideInRight{   //start hover animation buttons
   0% { left: -60px; }
   100% { left: 30px;}
@@ -1634,4 +1609,15 @@ html, body {
 }
 #cboxWrapper {
   height: 100% !important;
+}
+#main-carousel-action-button {
+  width: 90% !important;
+  left: 5%;
+}
+#catalog-button-action {
+  left: 9%;
+  width: 85%!important;
+}
+.contacts-button-action input {
+  left: 5px !important;
 }
