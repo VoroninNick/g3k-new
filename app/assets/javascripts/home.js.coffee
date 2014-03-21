@@ -158,9 +158,11 @@ $(document).ready ->
   $('.list_of_products h1').click ->
     $('.method_of_delivery_and_payment_wrapper').addClass(' dn')
     $('.list_of_products_wrapper').removeClass(' dn')
+    $('.confirmation_wrapper').addClass(' dn')
 
     $('.method_of_delivery_and_payment h1').removeClass(' active-status-order-form')
     $('.list_of_products h1').addClass(' active-status-order-form')
+    $('.confirmation h1').removeClass(' active-status-order-form')
     $('.method_of_delivery_and_payment h1').removeClass(' method-of-delivery-and-payment-active-status-order-form')
 
     $('.method_of_delivery_and_payment .itm .ao1').removeClass(' dn')
@@ -169,6 +171,9 @@ $(document).ready ->
     $('.list_of_products .itm .ao1').addClass(' dn')
     $('.list_of_products .itm .ao2').removeClass(' dn')
 
+    $('.confirmation .itm .ao2').addClass(' dn')
+    $('.confirmation .itm .ao1').removeClass(' dn')
+
     $('.method_of_delivery_and_payment .itm').addClass(' rr')
 
 
@@ -176,6 +181,7 @@ $(document).ready ->
   $('.method_of_delivery_and_payment h1').click ->
     $('.list_of_products_wrapper').addClass(' dn')
     $('.method_of_delivery_and_payment_wrapper').removeClass(' dn')
+    $('.confirmation_wrapper').addClass(' dn')
 
     $('.method_of_delivery_and_payment h1').addClass(' active-status-order-form')
     $('.method_of_delivery_and_payment h1').addClass(' method-of-delivery-and-payment-active-status-order-form')
@@ -195,6 +201,8 @@ $(document).ready ->
     $('.method_of_delivery_and_payment .itm').removeClass(' rr')
     $('.confirmation .itm').addClass(' rr')
 
+    $('#colorbox').addClass(' modapw')
+
 
   $('.confirmation h1').click ->
     $('.method_of_delivery_and_payment_wrapper').addClass(' dn')
@@ -202,9 +210,12 @@ $(document).ready ->
 
     $('.confirmation h1').addClass(' active-status-order-form')
     $('.method_of_delivery_and_payment h1').removeClass(' active-status-order-form')
+    $('.list_of_products h1').removeClass(' active-status-order-form')
+    $('.method_of_delivery_and_payment h1').addClass(' method-of-delivery-and-payment-active-status-order-form')
 
     $('.list_of_products .itm .ao1').removeClass(' dn')
     $('.list_of_products .itm .ao2').addClass(' dn')
+    $('.list_of_products_wrapper').addClass(' dn')
 
     $('.method_of_delivery_and_payment .itm .ao1').removeClass(' dn')
     $('.method_of_delivery_and_payment .itm .ao2').addClass(' dn')
@@ -213,6 +224,7 @@ $(document).ready ->
     $('.confirmation .itm .ao1').addClass(' dn')
 
     $('.confirmation .itm').removeClass(' rr')
+    $('.method_of_delivery_and_payment .itm').removeClass(' rr')
 
 
   $ ->
