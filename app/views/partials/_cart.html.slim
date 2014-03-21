@@ -1,6 +1,8 @@
 div style='display:none'
   #g3k-shopping-cart-form
     #cart-wrapper
+      -rez = 0
+      -count = 0
       .cart-wrapper
         .padding-page-top
         .cart-title-wrapper
@@ -57,7 +59,6 @@ div style='display:none'
                     span
                       |(грн.)
                 .clear
-            /-@count = 0
             - line_items = LineItem.where(cart_id: session[:cart].id)
             - line_items.each do |l|
               - product = Product.find l.product_id
@@ -75,10 +76,7 @@ div style='display:none'
                       .about-item-text
                         p = truncate product.short_description, length: 100, omission: '...'
                 .table-item-coll-count
-                  span
-                    /-LineItem.all.each do |item|
-                    /  -if (item.cart_id == @cart.id)
-                    /    -@count += item.quantity
+                  span = count
                 .table-item-coll-price
                   p
                     span = product.price
@@ -86,17 +84,19 @@ div style='display:none'
                       | ,00
                 .clear
               .clear
+                -count+=1
+                - rez+=product.price.to_f
             .cart-result
               .cart-result-inner
                 .cart-result-title
                   .table-title
                     img src="/assets/g3k-h1-arrow.png"
-                    |Загалом
+                    |Загалом&nbsp;
                     span
                       |(грн.)
                 .cart-result-show
-                  span
-                    /|153,00
+
+                  span = rez
                 .clear
             .clear
             .cart-checkout-buttons
@@ -115,7 +115,6 @@ div style='display:none'
                     |ВАШІ КОНТАКТНІ ДАНІ
                 .clear
             .contact-data
-              /= simple_form_for get_order_products, :html => {:class => 'form-horizontal' } do |f|
               form action="/payments" method="POST" id="product-order-form" class="form-horizontal"
                 .form-horizontal-left
                   input type="text" size="20" autocomplete="off" data-encrypted-name="name" placeholder="Микола" id="name"
@@ -205,12 +204,11 @@ div style='display:none'
                 .cart-result-title
                   .table-title
                     img src="/assets/g3k-h1-arrow.png"
-                    |Загалом
+                    |Загалом&nbsp;
                     span
                       |(грн.)
                 .cart-result-show
                   span
-                    /|153,00
                 .clear
             .clear
             .cart-checkout-buttons
@@ -254,12 +252,16 @@ div style='display:none'
                       h2
                         |Ім’я:
                       h2
+                        |Прізвище:
+                      h2
                         |тел.:
                       h2
                         |mail:
                     .c-w-c
                       h2
                         |Константин
+                      h2
+                        |Воронін
                       h2
                         |+38 (050) 417 07 28
                       h2
@@ -292,12 +294,11 @@ div style='display:none'
                 .cart-result-title
                   .table-title
                     img src="/assets/g3k-h1-arrow.png"
-                    |Загалом
+                    |Загалом&nbsp;
                     span
                       |(грн.)
                 .cart-result-show
-                  span
-                    /|153,00
+                  span = rez
                 .clear
             .clear
             .cart-checkout-buttons
