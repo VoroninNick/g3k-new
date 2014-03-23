@@ -59,7 +59,10 @@ div style='display:none'
                     span
                       |(грн.)
                 .clear
-            - line_items = LineItem.where(cart_id: session[:cart].id)
+            - sql = 'select product_id, sum(quantity) as amount from line_items where cart_id = ? group by product_id'
+
+            - total = 0
+            - line_items = LineItem.find_by_sql [sql,  session[:cart].id]
             - line_items.each do |l|
               - product = Product.find l.product_id
               .table-item
@@ -76,10 +79,12 @@ div style='display:none'
                       .about-item-text
                         p = truncate product.short_description, length: 100, omission: '...'
                 .table-item-coll-count
-                  span = count
+                  span = l.amount
                 .table-item-coll-price
                   p
-                    span = product.price
+                    - price = l.amount * product.price
+                    - total += price
+                    span = price
                     span
                       | ,00
                 .clear
@@ -96,7 +101,7 @@ div style='display:none'
                       |(грн.)
                 .cart-result-show
 
-                  span = rez
+                  span = total
                 .clear
             .clear
             .cart-checkout-buttons
