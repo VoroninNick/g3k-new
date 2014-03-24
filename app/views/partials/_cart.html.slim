@@ -83,7 +83,7 @@ div style='display:none'
                     span = l.amount
                 .table-item-coll-price
                   p
-                    -if l.amount
+                    -if l.amount && product.price
                       - price = l.amount * product.price
                       - total += price
                       span = price
