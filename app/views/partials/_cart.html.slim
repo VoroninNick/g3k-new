@@ -79,7 +79,8 @@ div style='display:none'
                       .about-item-text
                         p = truncate product.short_description, length: 100, omission: '...'
                 .table-item-coll-count
-                  span = l.amount
+                  - if span = l.amount
+                    span = l.amount
                 .table-item-coll-price
                   p
                     -if l.amount
