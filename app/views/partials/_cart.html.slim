@@ -102,8 +102,8 @@ div style='display:none'
                     span
                       |(грн.)
                 .cart-result-show
-
                   span = total
+
                 .clear
             .clear
             .cart-checkout-buttons
@@ -181,7 +181,7 @@ div style='display:none'
               .method_of_payment
                 .mopl
 
-                  input type="checkbox" data-encrypted-name="privat" id="privat" class="radio" value="1" name="fooby[1][]"
+                  input type="checkbox" data-encrypted-name="privat" id="privat" class="radio methodOfPayment" value="ПРИВАТБАНК" name="payment"
                   label for="privat"
                     |ПРИВАТБАНК
                   span
@@ -200,7 +200,7 @@ div style='display:none'
                     li
                       |Призначення платежу: для поповнення картки № (номер картки), ПІБ та ІПН одержувача
                 .mopr
-                  input type="checkbox" checked="checked" data-encrypted-name="opo" id="opo" class="radio" value="1" name="fooby[1][]"
+                  input type="checkbox" checked="checked" data-encrypted-name="opo" id="opo" class="radio methodOfPayment" value="Оплата при отриманні" name="payment"
                   label for="opo"
                     |Оплата при отриманні
                   span
@@ -215,6 +215,7 @@ div style='display:none'
                     span
                       |(грн.)
                 .cart-result-show
+                  span = total
                   span
                 .clear
             .clear
@@ -246,11 +247,7 @@ div style='display:none'
                     .c-w-t
                       h2
                         |Тип товару:
-                    .c-w-c
-                      h2
-                        |Кубік рубіка 5x5 — 12 шт
-                      h2
-                        |Кубік рубіка 5x5 — 12 шт
+                    .c-w-c.dataProduct
                 .right-top
                   h1
                     |Контактні дані отримувача
@@ -265,13 +262,13 @@ div style='display:none'
                       h2
                         |mail:
                     .c-w-c
-                      h2
-                        |Константин
-                      h2
+                      h2.firstNameValue
+                        |
+                      h2.lastNameValue
                         |Воронін
-                      h2
+                      h2.phoneValue
                         |+38 (050) 417 07 28
-                      h2
+                      h2.emailValue
                         |kontyantun@gmail.com
                 .clear
               .bottom-tbl
@@ -293,7 +290,7 @@ div style='display:none'
                       h2
                         |Спосіб оплати:
                     .c-w-c
-                      h2
+                      h2.methodOfPaymentValue
                         |При отриманні
                 .clear
             .cart-result
@@ -305,7 +302,7 @@ div style='display:none'
                     span
                       |(грн.)
                 .cart-result-show
-                  span = rez
+                  span = total
                 .clear
             .clear
             .cart-checkout-buttons
@@ -317,7 +314,7 @@ div style='display:none'
               .cart-checkout-buttons-next
                 .form-actions
                   img src="/assets/g3k-button-arrow-1.png"
-                  input class="btn btn btn-primary" name="commit" type="submit" value="ЗАМОВИТИ!"
+                  input class="btn btn btn-primary buyProduct" name="commit" type="submit" value="ЗАМОВИТИ!"
             .clear
           .call-order-bottom-line.footer_down
             .call-order-attentions

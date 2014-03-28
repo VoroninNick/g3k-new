@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     @product = Product.order('updated_at desc').limit(4)
     @banner = Banner.order('updated_at asc')
   end
+
+  def buy_product
+    BuyProduct.buy_product(params[:buy_product]).deliver
+  end
 end

@@ -11,7 +11,15 @@
 
 #$(document).on 'ready page:load', ->
 $(document).ready ->
+  gFirstNameValue = ''
+  gLastNameValue = ''
+  gPhoneValue = ''
+  gEmailValue = ''
+  gAddressValue = ''
+  gMethodOfPayment  = ''
+  gTitle = ''
 
+  totalValue = $('.cart-result-show span').text()
   $(".bx-slider").bxSlider
     mode: 'fade'
     auto: true
@@ -22,16 +30,6 @@ $(document).ready ->
       $('.container p').addClass('animated slideInDown')
 #  Colorbox for Products img
   $(".item-top-left-part .image a").colorbox rel: "col"
-  # Colorbox
-#  $("#login-form-inner").colorbox    # Colorbox for call order form
-#    inline: true
-#    width: "60%"
-#    href:"#login-form-inner"
-#    open:true
-  # Colorbox
-#  $("#call-to-order").colorbox    # Colorbox for call order form
-#      inline: true
-#      width: "75%"
   # Colorbox
   $("#shopping-cart").colorbox    # Colorbox for shopping-cart-form
     inline: true
@@ -72,6 +70,8 @@ $(document).ready ->
       false
 
 
+
+
   $('.method_of_delivery_and_payment_wrapper .cart-checkout-buttons-next .form-actions').click ->
     $('.method_of_delivery_and_payment_wrapper').addClass(' dn')
     $('.confirmation_wrapper').removeClass(' dn')
@@ -92,6 +92,40 @@ $(document).ready ->
       scrollTop: 0
       , 600
       false
+
+    $('.table-item').each ->
+      $item = $(this)
+      if(!$item.hasClass('added'))
+        $h1 = $item.find('.about-item-title h1')
+        $count_tag = $item.find('.table-item-coll-count span')
+        title = $h1.text() + " — " + $count_tag.text()
+
+        $dest = $('.dataProduct')
+
+        $dest.append('<h2>'+title+' шт'+'</h2>')
+        $item.addClass('added')
+
+    firstNameValue = $('#name').val()
+    lastNameValue = $('#last_name').val()
+    phoneValue = $('#phone').val()
+    emailValue = $('#email').val()
+    addressValue = $('#address').val()
+    methodOfPayment  = $('input:checkbox[name=payment]:checked').val()
+    totalValue = $('.cart-result-show span').text()
+
+    gFirstNameValue = firstNameValue
+    gLastNameValue = lastNameValue
+    gPhoneValue = phoneValue
+    gEmailValue = emailValue
+    gAddressValue = addressValue
+    gMethodOfPayment  = methodOfPayment
+
+    $('.firstNameValue').text(firstNameValue)
+    $('.lastNameValue').text(lastNameValue)
+    $('.phoneValue').text(phoneValue)
+    $('.emailValue').text(emailValue)
+    $('.methodOfPaymentValue').text(methodOfPayment)
+    $('.dataProduct').append("<h2>"+itemValue+"</h2>")
 
   $('.confirmation_wrapper .cart-list-products input').click ->
     $('.confirmation_wrapper').addClass(' dn')
@@ -175,6 +209,7 @@ $(document).ready ->
     $('.confirmation .itm .ao1').removeClass(' dn')
 
     $('.method_of_delivery_and_payment .itm').addClass(' rr')
+    $('.confirmation .itm').addClass(' rr')
 
 
 
@@ -226,6 +261,56 @@ $(document).ready ->
     $('.confirmation .itm').removeClass(' rr')
     $('.method_of_delivery_and_payment .itm').removeClass(' rr')
 
+# set data for send order product
+
+  $('.confirmation h1').click ->
+    $('.table-item').each ->
+      $item = $(this)
+      if(!$item.hasClass('added'))
+        $h1 = $item.find('.about-item-title h1')
+        $count_tag = $item.find('.table-item-coll-count span')
+        title = $h1.text() + " — " + $count_tag.text()
+
+        $dest = $('.dataProduct')
+
+        $dest.append('<h2>'+title+' шт'+'</h2>')
+        $item.addClass('added')
+
+    firstNameValue = $('#name').val()
+    lastNameValue = $('#last_name').val()
+    phoneValue = $('#phone').val()
+    emailValue = $('#email').val()
+    addressValue = $('#address').val()
+    methodOfPayment  = $('input:checkbox[name=payment]:checked').val()
+    totalValue = $('.cart-result-show span').text()
+
+    gFirstNameValue = firstNameValue
+    gLastNameValue = lastNameValue
+    gPhoneValue = phoneValue
+    gEmailValue = emailValue
+    gAddressValue = addressValue
+    gMethodOfPayment  = methodOfPayment
+
+    $('.firstNameValue').text(firstNameValue)
+    $('.lastNameValue').text(lastNameValue)
+    $('.phoneValue').text(phoneValue)
+    $('.emailValue').text(emailValue)
+    $('.methodOfPaymentValue').text(methodOfPayment)
+    $('.dataProduct').append("<h2>"+itemValue+"</h2>")
+
+
+
+  $(".buyProduct").click ->
+    valuesToSubmit = {buy_product:{firstName:gFirstNameValue, lastName:gLastNameValue, phone:gPhoneValue, email:gEmailValue, address:gAddressValue, methodOfPayment:gMethodOfPayment, product:gTitle  }}
+    $.ajax
+      url: '/buy_product'
+      type: "POST"
+      data: valuesToSubmit
+#      dataType: "JSON"
+      success: () ->
+        alert('Success')
+    #act on result.
+    false # prevents normal behaviour
 
   $ ->
     $container = $("#bestseller-items")

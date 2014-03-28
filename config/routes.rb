@@ -38,6 +38,8 @@ G3k::Application.routes.draw do
   resources "contacts", only: [:new, :create]
 
   resources "order_products", only: [:new, :create]
+
+  post '/buy_product' => 'home#buy_product', as: :buy_product
 #
 #get '/products' => 'products#index', :as => :products
 ##get '/product/:id' => 'products#show', :as => :product_item
