@@ -103,6 +103,7 @@ $(document).ready ->
         $dest = $('.dataProduct')
 
         $dest.append('<h2>'+title+' шт'+'</h2>')
+        gTitle = title
         $item.addClass('added')
 
     firstNameValue = $('#name').val()
@@ -119,6 +120,7 @@ $(document).ready ->
     gEmailValue = emailValue
     gAddressValue = addressValue
     gMethodOfPayment  = methodOfPayment
+
 
     $('.firstNameValue').text(firstNameValue)
     $('.lastNameValue').text(lastNameValue)
@@ -309,6 +311,8 @@ $(document).ready ->
 #      dataType: "JSON"
       success: () ->
         alert('Success')
+        $('.cart-content-wrapper').addClass(' dn')
+        $('.orderReadyWrapper').removeClass('dn')
     #act on result.
     false # prevents normal behaviour
 

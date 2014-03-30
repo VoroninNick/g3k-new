@@ -1,4 +1,7 @@
 G3k::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   #resources :products
   resources :carts  do
@@ -16,9 +19,7 @@ G3k::Application.routes.draw do
 
   post "/order", to: 'application#order', as: :call_orders
 
-  mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
 
   root :to =>'home#index'
 
