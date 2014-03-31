@@ -19,13 +19,8 @@ G3k::Application.routes.draw do
 
   post "/order", to: 'application#order', as: :call_orders
 
-
-
-  root :to =>'home#index'
-
   get "/about_us" => "about_us#about_us", :as => :about
   get "/actsii" => "actii#actsii", :as => :actsii
-  #get "/carts" => "carts#carts", :as => :carts
   get "/publications" => "publications#publications", :as => :publications
   get "/contacts" => "contacts#contacts", :as => :contacts
   get '/publications/articles' => 'article#index', :as => :articles
@@ -100,4 +95,5 @@ G3k::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root :to =>'home#index'
 end

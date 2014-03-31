@@ -34,6 +34,9 @@ $(document).ready ->
   $("#shopping-cart").colorbox    # Colorbox for shopping-cart-form
     inline: true
     width: "80%"
+  $("#linkToTermsOfDeliveryAndPayment").colorbox    # Colorbox for shopping-cart-form
+    inline: true
+    width: "80%"
 
   cartdb = $(".call-order-wrapper")
   $(".call_to_order a").click ->

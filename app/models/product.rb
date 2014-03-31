@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
 
   has_many :product_images
 
-  accepts_nested_attributes_for :product_images#, :allow_destroy => true
+  accepts_nested_attributes_for :product_images, :allow_destroy => true
   attr_accessible :product_images_attributes#, :allow_destroy => true
 
   attr_accessible :product_size
@@ -17,19 +17,17 @@ class Product < ActiveRecord::Base
   end
 
   rails_admin do
-    #label 'Product'
-    #label_plural 'Products'
+    navigation_label 'Каталог'
     label 'Продукт'
     label_plural 'Продукти'
 
     list do
       field :name
+      field :product_url
       field :image
       field :short_description
-      field :description
       field :price
       field :product_code
-      field :category_id
     end
 
     edit do

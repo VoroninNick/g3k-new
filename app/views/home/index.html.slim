@@ -8,7 +8,6 @@
             .image-layer1
               img src=b.layer1_image.url
             .container
-              /h1 =b.title
               p = raw b.description
             .image-layer2
               img src=b.layer2_image.url
@@ -47,13 +46,14 @@
         - @product.each do |product|
           li.item
             .image
-              img src=product.image
-              .price_wrapper
-                .price_text
-                  = product.price
-                  |.
-                  sup
-                    |00
+              a href=product_path(product.product_url)
+                img src=product.image
+                .price_wrapper
+                  .price_text
+                    = product.price
+                    |.
+                    sup
+                      |00
             .content_item
               h2
                 a href=(product_path(product.product_url)) = truncate  product.name, length: 70, omission: '...'
@@ -64,7 +64,7 @@
                   img.button_hover_icon src="/assets/g3k-button-arrow-1.png"
                   = button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => product.id), :method => :put
                 .link-too-info
-                  a href="#"
+                  a#linkToTermsOfDeliveryAndPayment href="#termsOfDeliveryAndPayment"
                     |Умови доставки та оплати
 
 .novelty
@@ -76,7 +76,8 @@
       - @product.each do |product|
         li.item
           .image
-            img src=product.image
+            a href=product_path(product.product_url)
+              img src=product.image
             .price_wrapper
               .price_text
                 = product.price

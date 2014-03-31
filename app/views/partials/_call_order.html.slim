@@ -16,14 +16,14 @@
           .input-select-collections
             .input-select-collections-from
               .input-select-collections-label
-                 = f.label :"з", :for=>"contact_time_from"
+                = f.label :"з", :for=>"contact_time_from"
               .input-select-collections-field
-                 = f.input :time_from, prompt: "08:00", collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], :label=>false
+                = f.input :time_from, prompt: "08:00", collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], :label=>false
             .input-select-collections-to
               .input-select-collections-label
-                 = f.label :"до", :for=>"contact_time_to"
+                = f.label :"до", :for=>"contact_time_to"
               .input-select-collections-field
-                 = f.input :time_to, prompt: "21:00", collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], :label=>false
+                = f.input :time_to, prompt: "21:00", collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], :label=>false
           = f.label :"Зручний час дзвінка", :class=> "label-padding"
         .form-horizontal-right
           = f.input :message, :as => :text, :required => false, placeholder: 'Зателефонувати мені по питання придбання 1000 кубіків рубіків у Львові.', :label=>false

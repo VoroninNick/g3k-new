@@ -1,8 +1,5 @@
 class KatalogController < KatalogWrapperController
 
-
-  # GET /categories/1
-  # GET /categories/1.json
   def show
 
     @category = Category.find_by_category_url(params[:category_name])
@@ -13,8 +10,9 @@ class KatalogController < KatalogWrapperController
     else
 
     end
-    @all_items_from_current_catalog = @category.products.order('updated_at desc')
-
+    #@allCurrentProducts = Category.find_by_category_name(params[:category_name]).products
+    #Тестово виводить всі продукти
+    @allProduct = Product.order('updated_at asc')
   end
 
   def katalog

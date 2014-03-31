@@ -16,6 +16,7 @@ $(window).resize ->
 
 #$(document).on 'ready page:load', ->
 $(document).ready ->
+
   if $(window).width() > 720
     $(".catalog-sidebar-menu-wrapper").css height: (($(".catalog-page-items-wrapper").height() + 170) + "px")
 #follow plugin
@@ -48,6 +49,10 @@ $(document).ready ->
 
 #   Deleting attr href for link with class selected
   $(".selected").removeAttr("href").css "cursor", "pointer"
+
+
+  $('.hitarea').addClass(' collapsable-hitarea')
+  $('.loading-group-sub-menu').css('display','block')
 
 
 

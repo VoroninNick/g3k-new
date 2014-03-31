@@ -280,6 +280,14 @@ option:checked {
   font-size: 1.500em;
   font-weight: 600;
   text-decoration: none;
+  border-bottom: 1px solid rgba(241, 107, 33, 0.3);
+  -webkit-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+.bestsellers_content .content_item h2 a:hover {
+  border-bottom: 1px solid rgba(241, 107, 33, 0.8);
 }
 .bestsellers_content .content_item p, .novelty_content .content_item p {
   color: #666666;
@@ -292,7 +300,15 @@ option:checked {
   font-size: 1.500em;
   font-weight: 600;
   text-decoration: none;
-  line-height: 20px;
+  line-height: 30px;
+  border-bottom: 1px solid rgba(241, 107, 33, 0.3);
+  -webkit-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+.novelty_content .content_item h2 a:hover {
+  border-bottom: 1px solid rgba(241, 107, 33, 0.8);
 }
 .novelty_content .content_item p {
   color: #666666;
@@ -1619,3 +1635,25 @@ html, body {
   left: 5px !important;
 }
 .dn {display: none;}
+
+#termsOfDeliveryAndPayment {
+  background: #414242;
+}
+.header-block-page h1 {
+  font-size: 1.475em;
+  font-weight: 600;
+//  padding: 10px 30px 0 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #f16b21;
+  display: table;
+}
+.header-block-page h1:before {
+  display: block;
+  content: '';
+  width: 40px;
+  height: 40px;
+  background: green;
+  position: relative;
+  top: 10px;
+}

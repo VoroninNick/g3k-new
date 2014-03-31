@@ -1,4 +1,3 @@
-/p#notice = notice
 .item-page-wrapper
   .item-top-part
     .item-top-left-part
@@ -36,7 +35,7 @@
           img.button_hover_icon src="/assets/g3k-button-arrow-1.png"
           = button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => @product.id), :method => :put
         .link-too-info
-          a href="#"
+          a#linkToTermsOfDeliveryAndPayment href="#termsOfDeliveryAndPayment"
             |Умови доставки та оплати
   .item-bottom-part
     = raw @product.description

@@ -285,3 +285,21 @@
   border: none!important;
 }
 .catalog-page-items .form-actions {width: 90%!important;}
+
+.catalog_image_content img {
+  width: 100%;
+}
+.catalog_text_content p em {
+  padding-top: 23px;
+  padding-bottom: 30px;
+  display: block;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+}
+.catalog_text_content h2 {
+  padding-top: 30px;
+  padding-bottom: 23px;
+  display: block;
+  color: #f3691e;
+  font-size: 20px;
+}

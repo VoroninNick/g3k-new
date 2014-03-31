@@ -76,11 +76,9 @@ body
                         = link_to category.name, category_path(category.category_url)
                       .group-menu-item-arrow-second
                         .group-menu-button-border
-                        /img src="/assets/g3k-sidebar-menu-arrow-1.png"
-                    ul#category.loading-group-sub-menu
+                    ul#category.loading-group-sub-menu display='block'
                       - category.child_categories.each do | sub_category |
                         li
-                          /p#toggle_tree =  sub_category.name
                           = link_to sub_category.name, category_path(sub_category.category_url)
                           ul#category.last-category-level
                             - sub_category.child_categories.each do | sub_category |

@@ -10,7 +10,9 @@ class Category < ActiveRecord::Base
 
   attr_accessible :products
 
-  has_attached_file :image
+  has_attached_file :image, styles:{ large: "936x520#"
+  },url:'/assets/images/category/:id/image_:style.:extension',
+                    path:':rails_root/public:url'
 
   validates :name, :uniqueness => true, presence: true
   before_validation :generate_category_url
@@ -19,31 +21,26 @@ class Category < ActiveRecord::Base
   end
 
   rails_admin do
-    #label 'Category'
-    #label_plural 'Categories'
+    navigation_label 'Каталог'
     label 'Категорія'
     label_plural 'Категорії'
 
     list do
       field :name
       field :parent
-      #field :child_categories
       field :image
       field :content
-      field :parent_id
     end
 
     edit do
       field :name
-      #label 'Name'
       field :parent
-      #label 'Parent category'
-      #field :child_categories
       field :content, :ck_editor do
         #label 'image'
       end
       field :image, :paperclip do
-        # whatever
+        label 'Зображення'
+        help 'Розмір зображення 936x520'
       end
     end
   end
