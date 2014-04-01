@@ -1,5 +1,5 @@
 .white_background
-    .grey-line
+  .grey-line
 .publications-page-title-wrapper
   .title_wrapper
     .title Публікації
@@ -8,50 +8,23 @@
     .about_title
       img src="assets/g3k-h1-arrow.png"
       | Обрані публікації
-    .slider-wrapper
-      #slides3
-        ul.slides-container
+    .publicationBannerWrapper
+      ul.publicationBanner
+        -if @future_articles
           - @future_articles.each do |article|
             - if article.future_article
               li
                 img src=article.image
-                .publication-slider-content
-                  .publication-slider-content-inner
+                .publicationBannerContentGrid
+                  .publicationBannerContentGridInner
                     h2
                       = truncate article.title, lenght: 70
                     p
-                      = truncate_html article.content, length: 250, omission: '...'
-                    .publication-slider-content-read-more
+                      = truncate_html article.article_short_description, length: 250, omission: '...'
+                    .publicationBannerLinkToo
                       img src="assets/g3k-button-arrow-1.png"
                       a href=(articles_path+'/'+article.url)
                         | Детальніше !
-            /li
-            /  img src="/assets/kubik-rubiks-baby-2.jpg" height="450"
-            /  .publication-slider-content
-            /    .publication-slider-content-inner
-            /      h2
-            /        | У Київському марафоні переміг Українець
-            /      p
-            /        | У заході взяли участь близько двох тисяч атлетів із 40 країн світу. Траса марафону пролягала центральними вулицями столиці, старт і фініш – на Михайлівській площі. Крім класичного марафону (42,195 км), у рамках заходу відбулися марафон-естафета, вуличний забіг на 10 км та сімейний забіг на 5 км, забіги для дітей і на 500 м.
-            /      .publication-slider-content-read-more
-            /        img src="assets/g3k-button-arrow-1.png"
-            /        a src="#"
-            /          | Детальніше !
-            /li
-            /  img src="/assets/kubik-rubiks-baby-3.jpg" height="450"
-            /  .publication-slider-content
-            /    .publication-slider-content-inner
-            /      h2
-            /        | У Львівському марафоні переміг Українець
-            /      p
-            /        | У заході взяли участь близько двох тисяч атлетів із 40 країн світу. Траса марафону пролягала центральними вулицями столиці, старт і фініш – на Михайлівській площі. Крім класичного марафону (42,195 км), у рамках заходу відбулися марафон-естафета, вуличний забіг на 10 км та сімейний забіг на 5 км, забіги для дітей і на 500 м.
-            /      .publication-slider-content-read-more
-            /        img src="assets/g3k-button-arrow-1.png"
-            /        a src="#"
-            /          | Детальніше !
-        /nav.slides-navigation
-        /  a.next href="#"
-        /  a.prev href="#"
 
 
 .publications-page-wrapper

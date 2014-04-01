@@ -74,9 +74,7 @@
   font-size: 1.625em;
   padding: 7px 0px 7px 70px;
 }
-.banner-select-publications-inner {
-  padding-bottom: 42px;
-}
+
 .item-news {
   padding-top: 42px;
   width: 50%;
@@ -138,4 +136,79 @@
   top: 0px;
   left: 13px;
   z-index: 234242;
+}
+
+//for banner
+
+.publicationBannerContentGrid {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 40%;
+  right: 0px;
+  background: #414242;
+}
+
+.publicationBanner, .publicationBanner li {
+  height: 500px;
+}
+
+.banner-select-publications-inner {
+  padding-bottom: 44px;
+  height: 554px;
+}
+
+.publicationBannerLinkToo img {
+  width: auto !important;
+  position: relative;
+  left: 15px;
+}
+.publicationBannerContentGridInner {
+  padding: 25px;
+}
+.publicationBannerContentGridInner h2 {
+  color: #F16B21;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.publicationBannerContentGridInner p {
+  color: #E5E5E5;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.publicationBannerLinkToo {
+  background: url("../assets/g3k-bg-pattern-orange-1.gif");
+  height: 50px;
+  width: 274px;
+}
+.publicationBannerLinkToo a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 26px;
+  position: relative;
+  top: 7px;
+  left: 30px;
+}
+.publicationBannerLinkToo img, .publicationBannerLinkToo a {
+  float: left;
+}
+.publicationBannerWrapper .bx-controls {
+  position: relative;
+  top: 0px !important;
+  z-index: auto !important;
+}
+.publicationBannerWrapper .bx-pager {
+  position: absolute !important;
+  left: 50px !important;
+  bottom: 20px !important;
+  z-index: 111111;
+}
+
+.publicationBannerWrapper .bx-wrapper .bx-prev:after, .publicationBannerWrapper .bx-wrapper .bx-next:after{
+  top: 25% !important;
 }

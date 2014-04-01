@@ -306,6 +306,8 @@ $(document).ready ->
 
 
   $(".buyProduct").click ->
+    $('.confirmation_wrapper').addClass(' dn')
+    $('.loading_status').removeClass('dn')
     valuesToSubmit = {buy_product:{firstName:gFirstNameValue, lastName:gLastNameValue, phone:gPhoneValue, email:gEmailValue, address:gAddressValue, methodOfPayment:gMethodOfPayment, product:gTitle  }}
     $.ajax
       url: '/buy_product'
@@ -313,7 +315,7 @@ $(document).ready ->
       data: valuesToSubmit
 #      dataType: "JSON"
       success: () ->
-        alert('Success')
+        $('.loading_status').addClass(' dn')
         $('.cart-content-wrapper').addClass(' dn')
         $('.orderReadyWrapper').removeClass('dn')
     #act on result.

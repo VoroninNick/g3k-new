@@ -13,8 +13,10 @@ div style='display:none'
             img src="/assets/g3k-bg-pattern-black-arrow-right.png"
             .clear
         .orderReadyWrapper.dn
-          span
-            |Ваше замовлення відправлене!
+          h2
+            |Ваш запит відправлено!
+          p
+            |У найближчий час з Вами зв'яжется наш менеджер.
         .cart-content-wrapper
           .cart-checkout-status
             ul
@@ -319,6 +321,8 @@ div style='display:none'
                   img src="/assets/g3k-button-arrow-1.png"
                   input class="btn btn btn-primary buyProduct" name="commit" type="submit" value="ЗАМОВИТИ!"
             .clear
+          .loading_status.dn
+            img src=asset_path('ajax-loader.gif')
           .call-order-bottom-line.footer_down
             .call-order-attentions
               p

@@ -3,7 +3,7 @@ class BuyProduct < ActionMailer::Base
   default to: 	'nazariy.papizh@gmail.com'
 
   def product_buy(buy_product)
-    @buyProduct = buy_product
+    @buy_product = buy_product
     to = []
     MailTo.all.each do | m |
       to.push(m.orderProduct)

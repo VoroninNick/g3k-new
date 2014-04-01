@@ -8,19 +8,13 @@ class Article < ActiveRecord::Base
 
   has_attached_file :image
 
-  #before_create :init_url
-  #def init_url
-  #  #self.url ||= self.title.parameterize
-  #end
-
   before_validation :generate_article_url
   def generate_article_url
     self.url ||= title.parameterize
   end
 
   rails_admin do
-    #label 'Article'
-    #label_plural 'Articles'
+    navigation_label 'Публікації'
     label 'Стаття'
     label_plural 'Статті'
 

@@ -7,7 +7,6 @@ class HomeController < ApplicationController
   end
 
   def buy_product
-
     BuyProduct.product_buy(params[:buy_product]).deliver
   end
 end
