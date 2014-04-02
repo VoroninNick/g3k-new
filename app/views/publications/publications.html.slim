@@ -37,7 +37,7 @@
         h2
           a href=(articles_path+'/'+article.url) = truncate  article.title, length: 70
         span = article.created_at.strftime("%d. %m. %Y")
-        p = truncate_html article.content, length: 250, omission: '...'
+        p = truncate_html article.article_short_description, length: 250, omission: '...'
 
 
 
