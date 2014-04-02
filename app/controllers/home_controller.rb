@@ -9,4 +9,10 @@ class HomeController < ApplicationController
   def buy_product
     BuyProduct.product_buy(params[:buy_product]).deliver
   end
+  def contact_us
+    ContactUs.contacts(params[:contact_us]).deliver
+  end
+  def call_order
+    CallOrder.call_order(params[:call_order]).deliver
+  end
 end

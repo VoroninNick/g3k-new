@@ -74,8 +74,10 @@ div style='display:none'
                 .table-item-coll-content
                   .table-item-coll-content-inner
                     .button-delete-item
-                      /= link_to image_tag("/assets/remove-icon-hi.png") + '', product, :confirm => 'Ви впевнені?', :method => :delete
-                      img src="/assets/remove-icon-hi.png"
+                      /= link_to image_tag("/assets/remove-icon-hi.png") + '', destroy_product_cart_line_items_path(session[:cart], :product_id => product.id), :confirm => 'Ви впевнені?', :method => :delete
+                      //= button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => product.id), :method => :put
+                      a href="#"
+                        img src="/assets/remove-icon-hi.png"
                     .image-item
                       img src=product.image
                     .about-item

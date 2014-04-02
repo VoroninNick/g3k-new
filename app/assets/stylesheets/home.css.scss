@@ -1718,3 +1718,21 @@ input:-moz-placeholder {
 .bestsellers_content a {
   text-decoration: none !important;
 }
+
+
+:focus {
+  outline: none !important;
+}
+
+#call_order_form label {
+  color: #f16b21;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 12px;
+  padding: 3px 12px 3px 17px !important;
+}
+#call_order_form textarea {
+  min-height: 131px !important;
+  width: 94% !important;
+  display: block;
+}

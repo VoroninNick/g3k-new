@@ -3,7 +3,6 @@ G3k::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  #resources :products
   resources :carts  do
     resources :line_items do
       collection do
@@ -36,6 +35,8 @@ G3k::Application.routes.draw do
   resources "order_products", only: [:new, :create]
 
   post '/buy_product' => 'home#buy_product', as: :buy_product
+  post '/call_order' => 'home#call_order', as: :call_order
+  post '/contact_us' => 'home#contact_us', as: :contact_us
 #
 #get '/products' => 'products#index', :as => :products
 ##get '/product/:id' => 'products#show', :as => :product_item
