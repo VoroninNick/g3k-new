@@ -96,5 +96,6 @@ G3k::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get 'aae95aece941.html', to: 'yandex_mail#confirm'
   root :to =>'home#index'
 end
