@@ -212,3 +212,25 @@
 .publicationBannerWrapper .bx-wrapper .bx-prev:after, .publicationBannerWrapper .bx-wrapper .bx-next:after{
   top: 25% !important;
 }
+
+.articles-item-inner h3, .articles-item-inner h2, .articles-item-inner h4, .articles-item-inner h5 {
+  color: #f16b21 !important;
+}
+.articles-item-inner ul li {
+  list-style: none;
+  position: relative;
+  color: #8b8b8b;
+  font-weight: 300;
+  padding-left: 18px;
+  padding-bottom: 10px;
+}
+.articles-item-inner ul li:before {
+  display: block;
+  content: '';
+  background: #8b8b8b;
+  width: 15px;
+  height: 1px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}

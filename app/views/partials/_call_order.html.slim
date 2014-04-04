@@ -101,7 +101,13 @@
             button#submit type="submit" class="btn btn-primary"
               |Замовити !
         .clear
-
+      .orderReadyWrapper.dn
+        h2
+          |Ваш запит відправлено!
+        p
+          |У найближчий час з Вами зв'яжется наш менеджер.
+      .loading_status.dn
+        img src=asset_path('ajax-loader.gif')
       .call-order-bottom-line.footer_down
       .call-order-attentions
         p

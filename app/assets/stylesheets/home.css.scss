@@ -1305,7 +1305,9 @@ html, body {
   float: left;
 }
 .article-info p span {
-  padding: 1px 70px 1px 12px;
+  padding: 0px 70px 0px 12px;
+  position: relative;
+  top: 0px;
 }
 .article-info {
   padding-bottom: 20px;

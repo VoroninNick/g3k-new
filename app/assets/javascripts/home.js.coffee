@@ -320,19 +320,25 @@ $(document).ready ->
         $('.orderReadyWrapper').removeClass('dn')
     #act on result.
     false # prevents normal behaviour
+
+
+#call order form
   $("#call_order_form").submit ->
     valuesToSubmit = $(this).serialize()
     #sumbits it to the given url of the form
     # you want a difference between normal and ajax-calls, and json is standard
+#    $('#call_order_form').addClass(' dn')
+    $('.loading_status').removeClass('dn')
     $.ajax
       url: $(this).attr("action")
       type: "POST"
       data: valuesToSubmit
 #      dataType: "JSON"
       success: () ->
-        alert("SUPER!!!!!!")
-#        $(".status-message").removeClass(" dn")
-#        $("#call_order_form").addClass(" dn")
+#        alert("SUPER!!!!!!")
+        $('.loading_status').addClass(' dn')
+        $(".orderReadyWrapper").removeClass("dn")
+        $("#call_order_form").addClass(" dn")
 #        $(".fancybox-inner").height('height', '250px')
 #        $(".fancybox-wrap").css({"width":"600px","left":"30%"})
 #        $.fancybox.close
