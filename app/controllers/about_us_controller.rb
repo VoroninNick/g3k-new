@@ -1,7 +1,7 @@
 class AboutUsController < ApplicationController
   def about_us
     @title = "Про нас"
-    @order_call = Call_order.new
+    #@order_call = Call_order.new
   end
   def new
     @order_call = Call_order.new
