@@ -1738,3 +1738,13 @@ input:-moz-placeholder {
   width: 94% !important;
   display: block;
 }
+
+.cart_delete_item {
+  background: url("../assets/remove-icon-hi.png") no-repeat;
+  background-size: 100%;
+  width: 12px;
+  height: 16px;
+  border: none;
+  cursor: pointer;
+  display: block;
+}

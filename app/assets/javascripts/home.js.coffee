@@ -308,6 +308,8 @@ $(document).ready ->
   $(".buyProduct").click ->
     $('.confirmation_wrapper').addClass(' dn')
     $('.loading_status').removeClass('dn')
+    cartId = $('.dn_cart_id').first().text() #get cart id
+
     valuesToSubmit = {buy_product:{firstName:gFirstNameValue, lastName:gLastNameValue, phone:gPhoneValue, email:gEmailValue, address:gAddressValue, methodOfPayment:gMethodOfPayment, product:gTitle  }}
     $.ajax
       url: '/buy_product'
@@ -318,9 +320,59 @@ $(document).ready ->
         $('.loading_status').addClass(' dn')
         $('.cart-content-wrapper').addClass(' dn')
         $('.orderReadyWrapper').removeClass('dn')
+
+        $.ajax
+          url: '/del_all'
+          type: 'POST'
+          data: {cart_id: cartId}
+          success: () ->
+
     #act on result.
     false # prevents normal behaviour
 
+
+
+#delete item
+  $(".cart_delete_item").click ->
+    productId = $(this).find('.dn_product_id').text()
+    cartId = $(this).find('.dn_cart_id').text()
+
+    totalResult= parseInt($('span#first_total').text())
+    countProduct = parseInt($('#id'+productId+' '+'.table-item-coll-count span').text())
+    priceProduct = parseInt($('#id'+productId+' '+'.table-item-coll-price p span:first-child').text())
+
+    tempVar = countProduct*priceProduct
+    resultPrice = totalResult-tempVar
+
+    valuesToSubmit = {product_id: productId, cart_id: cartId}
+    $.ajax
+      url: '/delete_product'
+      type: "POST"
+      data: valuesToSubmit
+      dataType: "json"
+      success: () ->
+#        alert('SUPER!!!!!!')
+#        console.log(valuesToSubmit)
+
+#        params = []
+#        arr = valuesToSubmit.split("&")
+#        i = 0
+#        while i < arr.length
+#          param_arr = arr[i].split("=")
+#          param =
+#            name: param_arr[0]
+#            value: param_arr[1]
+#          params[params.length] = param
+#          i++
+#        temp = params[0].value
+        wrapId = '#id'+productId
+        console.log(wrapId)
+        $(wrapId).remove()
+
+        $('.cart-result-show span').text(resultPrice)
+
+    #act on result.
+    false # prevents normal behaviour
 
 #call order form
   $("#call_order_form").submit ->
@@ -344,14 +396,6 @@ $(document).ready ->
 #        $.fancybox.close
     #act on result.
     false # prevents normal behaviour
-
-
-#  $('..button-delete-item a').click(event) ->
-#    event.preventDefault()
-#    $.post @href,
-#      _method: "delete"
-#      , null, "script"
-#    false
 
 
   $ ->

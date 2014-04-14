@@ -82,3 +82,6 @@ gem "devise"
 gem 'capistrano'
 
 gem 'capistrano-rails'
+
+gem 'better_errors'
+gem 'binding_of_caller'

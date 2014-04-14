@@ -67,17 +67,25 @@ div style='display:none'
             - sql = 'select product_id, sum(quantity) as amount from line_items where cart_id = ? group by product_id'
 
             - total = 0
+            - id_del = 0
             - line_items = LineItem.find_by_sql [sql,  session[:cart].id]
             - line_items.each do |l|
               - product = Product.find l.product_id
-              .table-item
+              .table-item id="id#{product.id}"
                 .table-item-coll-content
                   .table-item-coll-content-inner
                     .button-delete-item
                       /= link_to image_tag("/assets/remove-icon-hi.png") + '', destroy_product_cart_line_items_path(session[:cart], :product_id => product.id), :confirm => 'Ви впевнені?', :method => :delete
                       //= button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => product.id), :method => :put
-                      a href="#"
-                        img src="/assets/remove-icon-hi.png"
+                      /- id_del = product.id
+                      /form#hidden_delete_form action="/delete_product" method="DELETE"
+                      /  input type="hidden" value=product.id name="[product_id]"
+                      /  input type="hidden" value=session[:cart].id name="[session_id]"
+                      .cart_delete_item
+                        span.dn_product_id.dn =product.id
+                        span.dn_cart_id.dn =session[:cart].id
+                        /button type="submit" id="delete_item"
+
                     .image-item
                       img src=product.image
                     .about-item
@@ -109,7 +117,7 @@ div style='display:none'
                     span
                       |(грн.)
                 .cart-result-show
-                  span = total
+                  span#first_total = total
 
                 .clear
             .clear
