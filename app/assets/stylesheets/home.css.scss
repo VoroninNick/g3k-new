@@ -1265,12 +1265,15 @@ html, body {
   position: relative;
   left: 11%;
 }
-//.add-too-cart .form-actions img {
-//  width: 33px;
-//}
+
 .link-too-info {
   clear: both;
   width: 100%;
+  text-align: center;
+}
+.link-too-info.kat_spec {
+  text-align: left !important;
+  padding-left: 10%;
 }
 .add-too-cart a {
   color: #666666;
@@ -1432,6 +1435,8 @@ html, body {
 .form-horizontal-right .form-actions {
   float: right;
   margin-top: 30px;
+  position: relative;
+  left: 10px;
 }
 .form-login-in-to-site .contact-form-title {
   max-width: 1200px;
@@ -1614,7 +1619,7 @@ html, body {
   padding: 38px 28px 18px 28px;
 }
 
-.contact-data label, .input-nova label {
+label {
   color: #F16B21;
   font-size: 14px;
   padding: 5px 15px 20px 15px;
@@ -1747,4 +1752,24 @@ input:-moz-placeholder {
   border: none;
   cursor: pointer;
   display: block;
+}
+span.help-block.form-error {
+  float: right;
+  position: relative;
+  top: -20px;
+  color: #f16b21;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 12px;
+}
+.has-error label {
+  color: #B2B2B2 !important;
+}
+input.error {
+  border: 2px solid #f16b21 !important;
+}
+
+.input_cart .form-error {
+  top: -38px !important;
+  right: 20px;
 }

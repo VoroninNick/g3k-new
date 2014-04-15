@@ -1,10 +1,10 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#new_contact input:focus, #new_contact textarea:focus {
-  font-size: 1.4em;
-  font-weight: 400;
-}
+//#new_contact input:focus, #new_contact textarea:focus {
+//  font-size: 1.4em;
+//  font-weight: 400;
+//}
 #new_contact .form-actions {
   width: 31%!important;
 }
@@ -90,13 +90,17 @@
 .contacts-form .call-order-form-title-wrapper {
   height: 56px;
 }
-#new_contact label {
-  padding: 8px 0px 20px 14px;
-  color: #F16B21;
-  text-transform: uppercase;
-  display: block;
-  font-size: 0.87em;
-  font-weight: 300;
+//#new_contact label {
+//  padding: 8px 0px 20px 14px;
+//  color: #F16B21;
+//  text-transform: uppercase;
+//  display: block;
+//  font-size: 0.87em;
+//  font-weight: 300;
+//}
+.contacts-form .form-error {
+  top: -38px !important;
+  right: 20px;
 }
 .form-actions input {
   background: none!important;
@@ -110,11 +114,11 @@
   padding-bottom: 77px;
 }
 #new_contact input,  #new_contact textarea {
-  font-size: 1.3em;
+//  font-size: 1.3em;
   padding: 16px;
-  color: #B2B2B2;
-  font-style: italic;
-  font-weight: 300;
+//  color: #B2B2B2;
+//  font-style: italic;
+//  font-weight: 300;
 }
 .btn.btn.btn-primary {
   font-weight: 600;
@@ -177,7 +181,7 @@
   margin: 0 auto;
 }
 .form-horizontal-right textarea {
-  min-height: 260px;
+  min-height: 255px;
 }
 #cboxContent {
   height: 100%!important;

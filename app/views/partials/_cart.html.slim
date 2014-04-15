@@ -139,19 +139,23 @@ div style='display:none'
             .contact-data
               form action="/payments" method="POST" id="product-order-form" class="form-horizontal"
                 .form-horizontal-left
-                  input type="text" size="20" autocomplete="off" data-encrypted-name="name" placeholder="Микола" id="name"
-                  label for="name"
-                    |Ваше ім'я
-                  input type="text" size="12" autocomplete="off" data-encrypted-name="phone" placeholder="+38 (050) 417 07 28" id="phone"
-                  label for="phone"
-                    |Контактний телефон
+                  .input_cart
+                    input type="text" size="20" autocomplete="off" data-encrypted-name="name" placeholder="Микола" id="name" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть правильне ім'я"
+                    label for="name"
+                      |Ваше ім'я
+                  .input_cart
+                    input type="text" size="12" autocomplete="off" data-encrypted-name="phone" placeholder="+38 (050) 417 07 28" id="phone" data-validation="length number" data-validation-length="11-12" data-validation-error-msg="Введіть правильнай номер телефону"
+                    label for="phone"
+                      |Контактний телефон
                 .form-horizontal-right
-                  input type="text" size="20" autocomplete="off" data-encrypted-name="last_name" placeholder="Воронін" id="last_name"
-                  label for="last_name"
-                    |Ваше прізвище
-                  input type="text" size="20" autocomplete="off" data-encrypted-name="email" placeholder="voronin.nick@gmail.com8" id="email"
-                  label for="email"
-                    |Електронна пошта
+                  .input_cart
+                    input type="text" size="20" autocomplete="off" data-encrypted-name="last_name" placeholder="Воронін" id="last_name" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть правильне прізвище"
+                    label for="last_name"
+                      |Ваше прізвище
+                  .input_cart
+                    input type="text" size="20" autocomplete="off" data-encrypted-name="email" placeholder="voronin.nick@gmail.com8" id="email" data-validation="email" data-validation-error-msg="Введіть правильний email"
+                    label for="email"
+                      |Електронна пошта
                 .clear
             .cart-table
               .cart-table-title
@@ -169,9 +173,10 @@ div style='display:none'
                     |&nbsp;відділення Нової Почти
                   |.
                 .input-nova
-                  input type="text" size="20" autocomplete="off" data-encrypted-name="address" placeholder="Відділення №16, просп. Червоної Калини, 76" id="address"
-                  label for="address"
-                    |виберіть найближче до вас відділення нової почти
+                  .input_cart
+                    input type="text" size="20" autocomplete="off" data-encrypted-name="address" placeholder="Відділення №16, просп. Червоної Калини, 76" id="address" data-validation="length required" data-validation-length="3" data-validation-error-msg="Введіть адрес відправлення"
+                    label for="address"
+                      |виберіть найближче до вас відділення нової почти
                 a.link-to-nova href="http://novaposhta.ua/frontend/nearest/ua"
                   |Див. на карті
                 .clear

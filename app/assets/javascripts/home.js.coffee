@@ -533,15 +533,6 @@ $(document).ready ->
   ), ->
     $(".button-form img").removeClass("animated slideInLeft")
 
-# animate to button im call order form  in cycle on hover
-#  $(".form-actions input").hover (->
-#    if $(".form-actions img").hasClass("animated slideInLeft")
-#      $(".form-actions img").removeClass("animated slideInLeft").addClass "animated slideInLeft"
-#    else
-#      $(".form-actions img").removeClass("animated slideInLeft").addClass "animated slideInLeft"
-#  ), ->
-#    $(".form-actions img").removeClass("animated slideInLeft")
-
   mmbl = $(".main_menu")
 #  hw_marg_bot = $(".header_wraper")
   $("#mobile-menu-button").click ->
@@ -571,6 +562,7 @@ $(document).ready ->
 
 
 
+  $.validate()
 
 
 

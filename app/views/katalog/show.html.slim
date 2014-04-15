@@ -35,3 +35,6 @@
                       .form-actions#catalog-button-action
                         img.button_hover_icon src="/assets/g3k-button-arrow-1.png"
                         = button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => product.id), :method => :put
+                      .link-too-info
+                        a#linkToTermsOfDeliveryAndPayment href="#termsOfDeliveryAndPayment"
+                          |Умови доставки та оплати
