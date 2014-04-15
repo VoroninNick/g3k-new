@@ -1436,7 +1436,6 @@ html, body {
   float: right;
   margin-top: 30px;
   position: relative;
-  left: 10px;
 }
 .form-login-in-to-site .contact-form-title {
   max-width: 1200px;
@@ -1649,20 +1648,12 @@ label {
 .header-block-page h1 {
   font-size: 1.475em;
   font-weight: 600;
-//  padding: 10px 30px 0 30px;
+  width: 100%;
   text-align: center;
   text-transform: uppercase;
   color: #f16b21;
   display: table;
-}
-.header-block-page h1:before {
-  display: block;
-  content: '';
-  width: 40px;
-  height: 40px;
-  background: green;
-  position: relative;
-  top: 10px;
+  padding: 11px 0 11px 0;
 }
 
 /* all */
@@ -1772,4 +1763,29 @@ input.error {
 .input_cart .form-error {
   top: -38px !important;
   right: 20px;
+}
+.header-block-page h1 span:before, .header-block-page h1 span:after {
+  width: 55px;
+  height: 55px;
+  display: block;
+  content: '';
+  position: absolute;
+  top: -11px;
+}
+.header-block-page h1 span:before {
+  background: url("../assets/g3k-bg-pattern-black-arrow.png") no-repeat scroll 0 0 transparent;
+  left: 23%;
+}
+.header-block-page h1 span:after {
+  background: url("../assets/g3k-bg-pattern-black-arrow-right.png") no-repeat scroll 0 0 transparent;
+  right: 23%;
+}
+.header-block-page h1 span {
+  text-align: center;
+  display: block;
+  width: auto;
+  position: relative;
+}
+div.header-block-page {
+  background: url("../assets/g3k-bg-pattern-black-1.gif");
 }
