@@ -18,7 +18,7 @@ $(document).ready ->
 # ================================================= calc and return items in cart begin
   field_count = $('div.table-item-coll-count span').text()
 
-  alert(field_count)
+#  alert(field_count)
 
 #  ==================================================================== end calc
   if $(window).width() > 720
