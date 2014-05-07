@@ -4,49 +4,52 @@
   .contacts-page-inner
     .title_wrapper
       .title Контакти
-    .contacts-details
-      .contacts-details-address.contacts-detail
-        .about_title
-          img src="assets/g3k-h1-arrow.png"
-          |Адреса
-        p пл.&nbsp;Коліївщини, 1 (4-ий поверх)
-        p м.&nbsp;Львів, Україна, 79000
-      .contacts-details-web.contacts-detail
-        .about_title
-          img src="assets/g3k-h1-arrow.png"
-          |Веб
-        p
-          |email:
-          span info@g3k.in.ua
-        p
-          |skype:
-          span g3k-ua
-      .contacts-details-phones.contacts-detail
-        .about_title
-          img src="assets/g3k-h1-arrow.png"
-          |Телефони
-        p
-          a href="tel:+380949937997"
-            span +
-            |38&nbsp;
-            span = '('
-            |094
-            span = ')'
-            |&nbsp;993 79 97
-
-        p
-          a href="tel:+380322537997"
-            span +
-            |38&nbsp;
-            span = '('
-            |032
-            span = ')'
-            |&nbsp;253 79 97
-      .clear
+    -if @page_cont
+      -@page_cont.each do |p|
+        =raw p.page_content
+    /.contacts-details
+    /  .contacts-details-address.contacts-detail
+    /    .about_title
+    /      img src=asset_path('g3k-h1-arrow.png')
+    /      |Адреса
+    /    p пл.&nbsp;Коліївщини, 1 (4-ий поверх)
+    /    p м.&nbsp;Львів, Україна, 79000
+    /  .contacts-details-web.contacts-detail
+    /    .about_title
+    /      img src=asset_path('g3k-h1-arrow.png')
+    /      |Веб
+    /    p
+    /      |email:
+    /      span info@g3k.in.ua
+    /    p
+    /      |skype:
+    /      span g3k-ua
+    /  .contacts-details-phones.contacts-detail
+    /    .about_title
+    /      img src=asset_path('g3k-h1-arrow.png')
+    /      |Телефони
+    /    p
+    /      a href="tel:+380949937997"
+    /        span +
+    /        |38&nbsp;
+    /        span = '('
+    /        |094
+    /        span = ')'
+    /        |&nbsp;993 79 97
+    /
+    /    p
+    /      a href="tel:+380322537997"
+    /        span +
+    /        |38&nbsp;
+    /        span = '('
+    /        |032
+    /        span = ')'
+    /        |&nbsp;253 79 97
+    /  .clear
   .contacts-maps
     .contacts-maps-inner
       .about_title
-        img src="assets/g3k-h1-arrow.png"
+        img src=asset_path('g3k-h1-arrow.png')
         |Ми на гугл-мапі
       #map
         .clearfix

@@ -10,7 +10,7 @@ html
     = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false"
     = javascript_include_tag "//vk.com/js/api/openapi.js?101"
-    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"
+    /= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"
 
 
 body.for-colorbox-on-main-page
@@ -57,6 +57,15 @@ body.for-colorbox-on-main-page
         #g3k-shopping-cart
           a#shopping-cart href="#g3k-shopping-cart-form "
             img src="/assets/g3k-icon-basket-1.svg" title="Корзина"
+            -count_to_show = 0
+            -if count_to_show != 0
+              span#count_items_in_cart
+                font
+                  |(&nbsp;
+                =count_to_show
+                font
+                  |&nbsp;)
+
         #mobile-menu-button
           .mmb-line1.mmb
           .mmb-line2.mmb

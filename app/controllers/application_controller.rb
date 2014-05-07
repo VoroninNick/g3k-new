@@ -23,6 +23,17 @@ class ApplicationController < ActionController::Base
      render :new
    end
  end
+  helper_method :friendly_logo
+ def friendly_logo
+   @friendly_carousel = FriendlyCarousel.order('updated_at asc')
+   return @friendly_carousel
+ end
+
+ helper_method :footer_edit_page
+ def footer_edit_page
+   @fet = FooterEditField.order(":updated_at asc").limit(1)
+   return @fet
+ end
 
    helper_method :get_order_products
 

@@ -14,9 +14,13 @@ $(window).resize ->
       $(".catalog-sidebar-menu-wrapper").css("height", "100px")
 
 
-#$(document).on 'ready page:load', ->
 $(document).ready ->
+# ================================================= calc and return items in cart begin
+  field_count = $('div.table-item-coll-count span').text()
 
+  alert(field_count)
+
+#  ==================================================================== end calc
   if $(window).width() > 720
     $(".catalog-sidebar-menu-wrapper").css height: (($(".catalog-page-items-wrapper").height() + 170) + "px")
 #follow plugin

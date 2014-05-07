@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330213317) do
+ActiveRecord::Schema.define(version: 20140507134421) do
+
+  create_table "about_us", force: true do |t|
+    t.string   "title"
+    t.text     "page_content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "articles", force: true do |t|
     t.text     "content"
@@ -86,6 +93,26 @@ ActiveRecord::Schema.define(version: 20140330213317) do
     t.datetime "updated_at"
   end
 
+  create_table "footer_edit_fields", force: true do |t|
+    t.text     "about_us"
+    t.text     "contacts"
+    t.text     "footer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friendly_carousels", force: true do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "link"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "line_items", force: true do |t|
     t.integer  "cart_id"
     t.integer  "product_id"
@@ -98,6 +125,13 @@ ActiveRecord::Schema.define(version: 20140330213317) do
     t.string   "callTo"
     t.string   "orderProduct"
     t.string   "feedback"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "page_contacts", force: true do |t|
+    t.string   "title"
+    t.text     "page_content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

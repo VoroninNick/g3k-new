@@ -1239,7 +1239,18 @@ html, body {
   font-weight: 100;
   text-transform: uppercase;
   cursor: pointer;
+  position: relative;
 }
+span#count_items_in_cart {
+  position: absolute;
+  bottom: 32px;
+  right: -23px;
+  color: #ffffff;
+}
+span#count_items_in_cart font {
+  color: #f16b21;
+}
+
 .header_logo, #g3k-shopping-cart, .main_menu {
   float: left;
 }

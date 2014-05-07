@@ -3,22 +3,11 @@
 .friendly_logo_wrapper
   .friendly_logo.friendly_logo_slider
     ul#friendly-items
-      li.flex-slide
-        img src='/assets/brand_logo.jpg'
-      li.flex-slide
-        img src='/assets/brand_logo.jpg'
-      li.flex-slide
-        img src='/assets/brand_logo.jpg'
-      li.flex-slide
-        img src='/assets/brand_logo.jpg'
-      li.flex-slide
-        img src='/assets/brand_logo.jpg'
-      li.flex-slide
-        img src='/assets/brand_logo.jpg'
-      li.flex-slide
-        img src='/assets/brand_logo.jpg'
-      li.flex-slide
-        img src='/assets/brand_logo.jpg'
+      -if friendly_logo
+        -friendly_logo.each do |f|
+          li.flex-slide
+            a href=f.link
+              img src=f.image.url(:thumb)
 .clear
 .info_block_wrapper
   .info_block_title_wrapper
@@ -29,8 +18,9 @@
         .info-block-title
           img src="/assets/g3k-h1-arrow.png"
           | Про нас
-      .info-block-content-inner
-        p Аллегория наблюдаема. Различное расположение изящно редуцирует одиннадцатисложник, что нельзя сказать о нередко манерных эпитетах. Его герой, пишет Бахтин, абстрактное высказывание синфазно. Метафора недоступно представляет собой экзистенциальный анапест, хотя в существование или актуальность этого он не верит, а моделирует собственную реальность. Филологическое суждение представляет собой диалогический зачин, где автор является полновластным хозяином своих
+      -if footer_edit_page
+        -footer_edit_page.each do |f|
+          =raw f.about_us
     .info_block_we_are_in_social_networks.block
       .info-block-content-title-wrapper
         .info-block-title
@@ -61,34 +51,9 @@
         .info-block-title
           img src="/assets/g3k-h1-arrow.png"
           | Контакти
-      .info-block-content-inner
-        .info_block_contacts_content_top
-          h3
-            a href="tel:+380949939997"
-              span
-                |+
-              |38&nbsp;
-              span
-                = '('
-              |094
-              span
-                = ')'
-              |&nbsp;993 99 97
-          h3
-            a href="tel:+380322537997"
-              span
-                |+
-              |38&nbsp;
-              span
-                = '('
-              |032
-              span
-                = ')'
-              |&nbsp;253 79 97
-        .info_block_contacts_content_bottom
-          h5  пл. Коліївщини, 1 (4-ий поверх), м. Львів, Україна, 79000
-          p  ТзОВ СП «Трайдент Консалтінг та Інвестиції»
-          p  ЄДРПОУ: 14339080, р/р: 26008053812156
+      -if footer_edit_page
+        -footer_edit_page.each do |f|
+          =raw f.contacts
   .gery_line
 #footer.footer_wrapper
     .footer-box-shadow
@@ -125,10 +90,9 @@
               |&nbsp; в 2014 році.
               a href="http://voroninstudio.eu/" &nbsp;Інформація про сайт.
       .footer_down_right
-        .footer_down_right_text
-          p Незалежно від того, де ви знаходитесь на даний момент, ви зможете замовити товар, що, погодьтеся, дуже зручно.
-          p  Які ж переваги пропонує наш інтернет-магазин електроніки, телефонів та інших товарів?
-          p  Найбільш істотний факт - наявність тисяч позицій, які гарантовано є на складі.
+        -if footer_edit_page
+          -footer_edit_page.each do |f|
+            =raw f.footer
 = render :partial => 'partials/call_order'
 = render :partial => 'partials/cart'
 = render :partial =>'partials/terms_of_delivery_and_payment'

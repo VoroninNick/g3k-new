@@ -1,7 +1,7 @@
 class AboutUsController < ApplicationController
   def about_us
     @title = "Про нас"
-    #@order_call = Call_order.new
+    @page_cont = AboutUs.order('updated_at asc').limit(1)
   end
   def new
     @order_call = Call_order.new

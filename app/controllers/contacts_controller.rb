@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   def contacts
     @contact = Contact.new
+    @page_cont = PageContacts.order('updated_at asc').limit(1)
   end
   def new
     @contact = Contact.new

@@ -37,14 +37,10 @@ G3k::Application.routes.draw do
   post '/buy_product' => 'home#buy_product', as: :buy_product
   post '/call_order' => 'home#call_order', as: :call_order
   post '/contact_us' => 'home#contact_us', as: :contact_us
-  # delete '/delete_product' => 'line_items#destroy_product', as: :delete_product
   post '/delete_product' => 'line_items#destroy_product', as: :delete_product
 
   post '/del_all' => 'line_items#del_all', as: :del_all
 
-#
-#get '/products' => 'products#index', :as => :products
-##get '/product/:id' => 'products#show', :as => :product_item
 
 
   # The priority is based upon order of creation: first created -> highest priority.
