@@ -15,7 +15,7 @@ class PageContacts < ActiveRecord::Base
         label 'Назва'
         help ''
       end
-      field :page_content, :ck_editor do
+      field :page_content do
         label 'Сторінка'
         help 'Увага! Заповнення вами цього поля впливає на HTML розмітку сторінки! Будьте уважні!'
       end
