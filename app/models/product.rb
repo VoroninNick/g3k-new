@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
 
   has_many :product_images
 
+  validates_presence_of :price, :message => "Заповніть це поле! Поле не може бути пустим."
+
   accepts_nested_attributes_for :product_images, :allow_destroy => true
   attr_accessible :product_images_attributes#, :allow_destroy => true
 

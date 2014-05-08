@@ -9,7 +9,6 @@
 #   alert "document is ready"
 
 
-#$(document).on 'ready page:load', ->
 $(document).ready ->
   gFirstNameValue = ''
   gLastNameValue = ''
@@ -326,6 +325,7 @@ $(document).ready ->
           type: 'POST'
           data: {cart_id: cartId}
           success: () ->
+            $('span#count_items_in_cart').addClass(' dn')
 
     #act on result.
     false # prevents normal behaviour
@@ -337,10 +337,9 @@ $(document).ready ->
     productId = $(this).find('.dn_product_id').text()
     cartId = $(this).find('.dn_cart_id').text()
 
-    totalResult= parseInt($('span#first_total').text())
-    countProduct = parseInt($('#id'+productId+' '+'.table-item-coll-count span').text())
-    priceProduct = parseInt($('#id'+productId+' '+'.table-item-coll-price p span:first-child').text())
-
+    totalResult= parseFloat($('span#first_total').text())
+    countProduct = parseFloat($('#id'+productId+' '+'.table-item-coll-count span').text())
+    priceProduct = parseFloat($('#id'+productId+' '+'.table-item-coll-price p span:first-child').text())
     tempVar = countProduct*priceProduct
     resultPrice = totalResult-tempVar
 
@@ -368,8 +367,13 @@ $(document).ready ->
         wrapId = '#id'+productId
         console.log(wrapId)
         $(wrapId).remove()
-
         $('.cart-result-show span').text(resultPrice)
+        sum = 0
+        $('.table-item-coll-count span').each ->
+          sum +=parseInt($(this).text())
+        if sum !=0
+          $('span#count_items_in_cart span').text(sum)
+          $('span#count_items_in_cart').removeClass('dn')
 
     #act on result.
     false # prevents normal behaviour
