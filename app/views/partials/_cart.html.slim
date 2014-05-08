@@ -199,26 +199,29 @@ div style='display:none'
                     |СПОСІБ ОПЛАТИ
                 .clear
               .method_of_payment
-                .mopl
-
-                  input type="checkbox" data-encrypted-name="privat" id="privat" class="radio methodOfPayment" value="ПРИВАТБАНК" name="payment"
-                  label for="privat"
-                    |ПРИВАТБАНК
-                  span
-                    |Передоплата на рахунок компанії вПриватбанку
-                  h1
-                    |Наші реквізити:
-                  ul
-                    li
-                      |Отримувач: ПАО КБ ПриватБанк
-                    li
-                      |Код отримувача (ОКПО, ЕГРПОУ): 14360570
-                    li
-                      |Код банку отримувача (МФО): 305299
-                    li
-                      |Рахунок отримувача: 29244825509100
-                    li
-                      |Призначення платежу: для поповнення картки № (номер картки), ПІБ та ІПН одержувача
+                -if bank_details
+                  -bank_details.each do |p|
+                    =raw p.page
+                /.mopl
+                /
+                /  input type="checkbox" data-encrypted-name="privat" id="privat" class="radio methodOfPayment" value="ПРИВАТБАНК" name="payment"
+                /  label for="privat"
+                /    |ПРИВАТБАНК
+                /  span
+                /    |Передоплата на рахунок компанії вПриватбанку
+                /  h1
+                /    |Наші реквізити:
+                /  ul
+                /    li
+                /      |Отримувач: ПАО КБ ПриватБанк
+                /    li
+                /      |Код отримувача (ОКПО, ЕГРПОУ): 14360570
+                /    li
+                /      |Код банку отримувача (МФО): 305299
+                /    li
+                /      |Рахунок отримувача: 29244825509100
+                /    li
+                /      |Призначення платежу: для поповнення картки № (номер картки), ПІБ та ІПН одержувача
                 .mopr
                   input type="checkbox" checked="checked" data-encrypted-name="opo" id="opo" class="radio methodOfPayment" value="Оплата при отриманні" name="payment"
                   label for="opo"

@@ -61,4 +61,16 @@ class ApplicationController < ActionController::Base
   def store_location
     session[:previous_url] = request.fullpath
   end
+
+ helper_method :get_categories
+ def get_categories
+   @categories = Category.where(:parent_id => nil)
+   return @categories
+ end
+  helper_method :bank_details
+
+  def bank_details
+    @page = BankDetails.order('updated_at asc').limit(1)
+    return @page
+  end
 end

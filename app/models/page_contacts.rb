@@ -2,7 +2,7 @@ class PageContacts < ActiveRecord::Base
   attr_accessible :title, :page_content
 
   rails_admin do
-    navigation_label 'Сторінки'
+    navigation_label 'Редагування'
     label 'Конкти'
     label_plural 'Конкти'
 

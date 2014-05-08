@@ -1,26 +1,34 @@
-.about_title
-  img src="/assets/g3k-h1-arrow.png"
-  = @category.name
-.catalog-content-items
-  section#products.products
-    ul
-      - @category.products.each do |product|
-        li.cat-item.product
-          .image
-            img src=product.image
-            .price_wrapper
-              .price_text
-                = product.price
-                sup
-                  |00
-          .content_item
-            h2
-              a href=(product_path(product.product_url)) = truncate  product.name, length: 70, omission: '...'
-            p
-              = product.short_description
-            .add-too-cart
-              .form-actions
-                img.button_hover_icon src="/assets/g3k-button-arrow-1.png"
-                = button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => product.id), :method => :put
+#content-wrapper
+  .catalog-page-title-wrapper
+    .title_wrapper
+      .title Каталог продукції
+  .catalog-content-wrapper
+    = render :partial => 'partials/catalog_sidebar'
+    .catalog-page-items-wrapper
+      .catalog-page-items
+        .about_title
+          img src="/assets/g3k-h1-arrow.png"
+          = @category.name
+        .catalog-content-items
+          section#products.products
+            ul
+              - @category.products.each do |product|
+                li.cat-item.product
+                  .image
+                    img src=product.image
+                    .price_wrapper
+                      .price_text
+                        = product.price
+                        sup
+                          |00
+                  .content_item
+                    h2
+                      a href=(product_path(product.product_url)) = truncate  product.name, length: 70, omission: '...'
+                    p
+                      = product.short_description
+                    .add-too-cart
+                      .form-actions
+                        img.button_hover_icon src="/assets/g3k-button-arrow-1.png"
+                        = button_to 'Замовити!',add_product_cart_line_items_path(session[:cart], :product_id => product.id), :method => :put
 
 

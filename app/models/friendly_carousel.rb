@@ -6,8 +6,8 @@ class FriendlyCarousel < ActiveRecord::Base
                     path:':rails_root/public:url'
   rails_admin do
     navigation_label 'Банери'
-    label 'Каросель'
-    label_plural 'Каросель'
+    label 'Карусель'
+    label_plural 'Карусель'
 
     list do
       field :title

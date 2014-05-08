@@ -2,7 +2,7 @@ class FooterEditField < ActiveRecord::Base
   attr_accessible :about_us, :contacts, :footer
 
   rails_admin do
-    navigation_label 'Footer'
+    navigation_label 'Редагування'
     label 'Footer'
     label_plural 'Footer'
 

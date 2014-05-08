@@ -10,68 +10,13 @@ html
     = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false"
     = javascript_include_tag "//vk.com/js/api/openapi.js?101"
-    /= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"
 
 
-body.for-colorbox-on-main-page
-  #page-wrapper
-    .header_wraper
-      .header
-        .header_logo
-          = link_to image_tag("logo_ua.png") + '', root_path, :title => 'На головну'
-          .call_to_order
-            .content_text
-              .blind
-              p
-                a href="tel:+380322597997"
-                  font +
-                  |38&nbsp;
-                  font
-                    = '('
-                  |032
-                  font
-                    = ')'
-                  |&nbsp;259 79 97
-            a#call-to-order href="#call-to-order-form" замовити дзвінок
+  body.for-colorbox-on-main-page
+     #page-wrapper
+        = render :partial => 'partials/header'
+        #content-wrapper
+          = yield
 
-
-        nav.main_menu
-          li.about-us
-            span.about-us-hover-effect
-              img src="/assets/g3k-menu-arrow-2b.png"
-            = link_to 'Про нас', about_path, :class => is_active?("about_us")
-          li.katalog
-            span.katalog-hover-effect
-              img src="/assets/g3k-menu-arrow-2b.png"
-            = link_to 'Каталог', katalog_path, :class => is_active?("katalog")
-          li.publications
-            span.publications-hover-effect
-              img src="/assets/g3k-menu-arrow-2b.png"
-            = link_to 'Публікації', publications_path, :class => is_active?("publications")
-          li.contacts
-            span.contacts-hover-effect
-              img src="/assets/g3k-menu-arrow-2b.png"
-            = link_to 'Контакти', contacts_path, :class => is_active?("contacts")
-          .clearinfo-block-content-inner
           .clear
-        #g3k-shopping-cart
-          a#shopping-cart href="#g3k-shopping-cart-form "
-            img src="/assets/g3k-icon-basket-1.svg" title="Корзина"
-            -count_to_show = 0
-            -if count_to_show != 0
-              span#count_items_in_cart
-                font
-                  |(&nbsp;
-                =count_to_show
-                font
-                  |&nbsp;)
-
-        #mobile-menu-button
-          .mmb-line1.mmb
-          .mmb-line2.mmb
-          .mmb-line3.mmb
-    #content-wrapper
-      = yield
-
-      .clear
-    = render :partial => 'partials/footer'
+        = render :partial => 'partials/footer'

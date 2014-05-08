@@ -16,7 +16,15 @@ $(window).resize ->
 
 $(document).ready ->
 # ================================================= calc and return items in cart begin
-  field_count = $('div.table-item-coll-count span').text()
+  sum = 0
+  $('.table-item-coll-count span').each ->
+#    alert($(this).text())
+    sum +=parseInt($(this).text())
+  if sum !=0
+    $('span#count_items_in_cart span').append(sum)
+    $('span#count_items_in_cart').removeClass('dn')
+#    alert(sum)
+#  field_count = $('div.table-item-coll-count span').text()
 
 #  alert(field_count)
 

@@ -1,0 +1,21 @@
+.catalog-sidebar-menu-wrapper
+  .catalog-sidebar-menu-inner
+    .catalog-sidebar-menu
+      ul#navigation.loading-group-menu
+        - get_categories.each do | category |
+          li.loading-group-item
+            .loading-group-item-title-wrapper
+              .group-menu-item-arrow-first
+                img src="/assets/g3k-h1-arrow.png"
+              .group-menu-item-title
+                = link_to category.name, category_path(category.category_url)
+              .group-menu-item-arrow-second
+                .group-menu-button-border
+            ul#category.loading-group-sub-menu display='block'
+              - category.child_categories.each do | sub_category |
+                li
+                  = link_to sub_category.name, category_path(sub_category.category_url)
+                  ul#category.last-category-level
+                    - sub_category.child_categories.each do | sub_category |
+                      li
+                        = link_to sub_category.name, category_path(sub_category.category_url)
