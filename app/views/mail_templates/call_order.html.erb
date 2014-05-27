@@ -1,0 +1,29 @@
+<h3>Games3k, замовлення дзівнка</h3>
+<table>
+  <tbody>
+  <tr>
+    <td>Ім'я</td>
+    <td><%=@call_order[:name] %></td>
+  </tr>
+  <tr>
+    <td>Контактний телефон</td>
+    <td><%=@call_order[:phone] %></td>
+  </tr>
+  <tr>
+    <td>Зручний час дзвінка:</td>
+  </tr>
+  <tr>
+    <td>з</td>
+    <td><%=@call_order[:time_from] %></td>
+  </tr>
+  <tr>
+    <td>до</td>
+    <td><%=@call_order[:time_to] %></td>
+  </tr>
+  <tr>
+    <td>Повідомлення</td>
+    <td><%=@call_order[:message] %></td>
+  </tr>
+  </tbody>
+</table>
+

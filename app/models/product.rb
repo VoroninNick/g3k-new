@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   attr_accessible :name, :image, :short_description, :description, :price, :product_code, :category, :product_url, :category_id
+  attr_accessible :bestseller
 
   has_many :product_images
 
@@ -25,6 +26,7 @@ class Product < ActiveRecord::Base
 
     list do
       field :name
+      field :bestseller
       field :product_url
       field :image
       field :short_description
@@ -34,6 +36,10 @@ class Product < ActiveRecord::Base
 
     edit do
       field :name
+      field :bestseller do
+        label 'Хіт продажу'
+        help 'Поставте галочку якщо цей продукт хіт продажу'
+      end
       field :category
       field :image, :paperclip do
       end

@@ -309,7 +309,7 @@ $(document).ready ->
     $('.loading_status').removeClass('dn')
     cartId = $('.dn_cart_id').first().text() #get cart id
 
-    valuesToSubmit = {buy_product:{firstName:gFirstNameValue, lastName:gLastNameValue, phone:gPhoneValue, email:gEmailValue, address:gAddressValue, methodOfPayment:gMethodOfPayment, product:gTitle  }}
+    valuesToSubmit = {buy_product:{firstName:gFirstNameValue, lastName:gLastNameValue, phone:gPhoneValue, email:gEmailValue, address:gAddressValue, methodOfPayment:gMethodOfPayment, product:$('.dataProduct').text()  }}
     $.ajax
       url: '/buy_product'
       type: "POST"

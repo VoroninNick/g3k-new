@@ -22,7 +22,11 @@
           img src="/assets/g3k-bg-pattern-black-arrow.png"
           h1 Форма зворотнього зв'язку
           img src="/assets/g3k-bg-pattern-black-arrow-right.png"
-
+      -if flash.now[:notice]
+        h3
+          =flash.now[:notice]
+      -else
+        =flash.now[:error]
       form accept-charset="UTF-8" action="/contacts" class="simple_form form-horizontal has-validation-callback" id="new_contact" method="post"
         .form-horizontal-left
           .input.contact_name

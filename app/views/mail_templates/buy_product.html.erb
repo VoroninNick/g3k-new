@@ -1,12 +1,63 @@
+<h3>Games3k, замовлення продукта</h3>
 <table>
   <tbody>
   <tr>
     <td>
-      <h1>G3k test</h1>
+     Ім'я
+    </td>
+    <td>
+      <%=@buy_product[:firstName]%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+     Прізвище
+    </td>
+    <td>
+      <%=@buy_product[:lastName]%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Номер телефону
+    </td>
+    <td>
+      <%=@buy_product[:phone]%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+     Електронна адреса
+    </td>
+    <td>
+      <%=@buy_product[:email]%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Адреса відділення
+    </td>
+    <td>
+      <%=@buy_product[:address]%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Спосіб оплати
     </td>
     <td>
       <%=@buy_product[:methodOfPayment]%>
     </td>
   </tr>
+  <tr>
+    <td>
+     Продукти
+    </td>
+    <td>
+      <%=@buy_product[:product]%>
+    </td>
+  </tr>
   </tbody>
 </table>
+
+

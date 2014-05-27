@@ -4,10 +4,8 @@ class CallOrder < ActionMailer::Base
 
   def call_order(call_order)
     @call_order = call_order
-    to = []
-    MailTo.all.each do | m |
-      to.push(m.callTo)
-    end
+    # to = []
+    to = MailTo.first.callTo.split(',')
     mail(:template_path => 'mail_templates', :template_name => 'call_order', :subject => "New message from your website!", to: to)
   end
 end

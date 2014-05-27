@@ -5,9 +5,10 @@ class BuyProduct < ActionMailer::Base
   def product_buy(buy_product)
     @buy_product = buy_product
     to = []
-    MailTo.all.each do | m |
-      to.push(m.orderProduct)
-    end
+    to = MailTo.first.orderProduct.split(',')
+    # MailTo.all.each do | m |
+    #   to.push(m.orderProduct)
+    # end
     mail(:template_path => 'mail_templates', :template_name => 'buy_product', :subject => "New message from your website!", to: to)
   end
 end
